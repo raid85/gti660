@@ -37,7 +37,7 @@ public class Controleur {
 		if (request.getParameterMap().size() < 1){
 				
 				
-				return "tt.jsp";
+				return "login.jsp";
 			}
 			
 		else if (request.getParameter("action").equals("afficherSpectacle")){

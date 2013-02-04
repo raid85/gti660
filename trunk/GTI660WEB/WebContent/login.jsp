@@ -40,17 +40,20 @@ Spectacle[] spectacles = (Spectacle[])request.getAttribute("spectacles");
 	<div id="page">
 		<!-- start content -->
 		<div id="content">
-		        <% for (int i=0; i<spectacles.length;i++){%>
-                    <div class="film">
-						<p class="date">mar<b>03</b></p>
-						<a href="./?action=afficherSpectacle&spectacleid=<%=spectacles[i].getId()%>"><h2 class="title"><%=spectacles[i].getNom()%></h2></a>
-				
-						<img  class="picture" src=<%=spectacles[i].getImage()%> />
-						<div class="entry">
-							<%=spectacles[i].getDescription() %>
-						</div>
-					</div>
-                <%}%>
+		       <form action="./" method="post">
+<label>Username:</label>
+<input type="text" value="" />
+<BR>
+<label>Password:</label>
+<input type="password" value="" />
+<BR>
+<BR>
+<input type="submit" value="LOGIN" />
+
+</form>
+
+
+		       
 		</div>
 		<!-- end content -->
 		<!-- start sidebar -->

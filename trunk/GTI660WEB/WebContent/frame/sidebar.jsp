@@ -74,16 +74,9 @@
 					</div>
 				</li>
 				<li>
-					<h2>Mon Panier</h2>
+					<h2>Suggestions</h2>
 					<ul>
-					<%
-					Panier monPanier = (Panier)session.getAttribute("panier");
-					
-					if (monPanier.getTotalBillets() > 0){
-					for (int i = 0; i < monPanier.getPanier().length; i++){ %>
-						<li><a href="#"><%=monPanier.getPanier()[i].getRep().getSpectacleNom() %>  :  <%=monPanier.getPanier()[i].getNbBillets() %></a></li> <%
-					}}else { %>
-					PANIER VIDE <%}%>
+				
 					</ul>
 				</li>
 		</div>
