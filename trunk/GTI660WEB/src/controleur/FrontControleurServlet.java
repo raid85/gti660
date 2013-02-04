@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * Petit servlet démontrant une façon de faire un front controller
  *
  * @author Nicolas Brousseau
+ * @author Riad Chebli
  * @version 01/28/2010
  */
 
@@ -30,17 +31,7 @@ import javax.servlet.http.HttpServletResponse;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Redirige afin de centraliser les requêtes
-//		try{
-//		long vingtMinutes=1200000;
-//		request.getSession().setMaxInactiveInterval(600);
-//		if(request.getSession().getCreationTime() < (request.getSession().getCreationTime()+ vingtMinutes)){
-//			//request.
-//		}
-//		traiter(request, response);
-//		}catch(IllegalStateException iSE){
-//			
-//		}
+
 		traiter(request, response);
 	}
 	
@@ -55,6 +46,7 @@ import javax.servlet.http.HttpServletResponse;
 		//Redirige au contrôleur de messages. Dans un Front Controller normal, il pourrait y avoir plusieurs servlets!
 		Controleur controleur = new Controleur();
 		String page = controleur.executerTraitement(request, response);
+		System.out.println("LA PAGE" +page);
 		redirige(request, response, page);
 	}
 	
