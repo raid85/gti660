@@ -11,10 +11,7 @@
 </head>
 <body>
 <!-- start header -->
-<div id="header">
-	<%@ include file="frame/banner.jsp" %>
-	<%@ include file="frame/menu.jsp" %>
-</div>
+
 <hr />
 <!-- end header -->
 <!-- start page -->
@@ -33,14 +30,14 @@
 		</div>
 		<!-- end content -->
 		<!-- start sidebar -->
-		<%@ include file="frame/sidebar.jsp" %>
+	
 		<!-- end sidebar -->
 		<br style="clear: both;" />
 	</div>
 </div>
 <!-- end page -->
 <!-- start footer -->
-	<%@ include file="frame/footer.jsp" %>
+
 <!-- end footer -->
 </div>
 </body>

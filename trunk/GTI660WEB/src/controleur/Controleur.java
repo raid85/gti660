@@ -10,10 +10,7 @@ import modele.Client;
 
 //import modele.PaiementDAO;
 import modele.DelegateSpectacles;
-import modele.LignePanier;
 
-import modele.Representation;
-import modele.Panier;
 
 /**
  * Cette classe est le sous-controleur qui effectue le traitement selon les paramètres reçus
@@ -40,7 +37,7 @@ public class Controleur {
 		else if (request.getParameter("action").equals("afficherSpectacle")){
 
 			try {
-				request.setAttribute("spectacle", DelegateSpectacles.getRepresentations(Integer.parseInt(request.getParameter("spectacleid"))));
+//				request.setAttribute("spectacle", DelegateSpectacles.getRepresentations(Integer.parseInt(request.getParameter("spectacleid"))));
 			}
 			catch (NumberFormatException e){
 				return "erreur.jsp";

@@ -16,13 +16,11 @@ public class DelegateSpectacles {
 		return SpectacleDAO.getSpectacles();
 	}
 	
-	public static TORepresentations getRepresentations(int idSpectacle) throws ClassNotFoundException, SQLException, ClassCastException {
-		return SpectacleDAO.getRepresentations(idSpectacle);
-	}
+
 	
-	public static boolean reserverBillets(int idRep, int nbBillets, Panier monPanier) throws ClassNotFoundException, SQLException, ClassCastException {
+	public static boolean reserverBillets(int idRep, int nbBillets) throws ClassNotFoundException, SQLException, ClassCastException {
 		if (SpectacleDAO.getNbBilletsDispo(idRep) >= nbBillets){
-			monPanier.ajouterLigne(SpectacleDAO.getRep(idRep), nbBillets);
+//			monPanier.ajouterLigne(SpectacleDAO.getRep(idRep), nbBillets);
 			
 		}
 		return SpectacleDAO.getNbBilletsDispo(idRep) >= nbBillets;

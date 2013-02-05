@@ -46,7 +46,6 @@ import javax.servlet.http.HttpServletResponse;
 		//Redirige au contrôleur de messages. Dans un Front Controller normal, il pourrait y avoir plusieurs servlets!
 		Controleur controleur = new Controleur();
 		String page = controleur.executerTraitement(request, response);
-		System.out.println("LA PAGE" +page);
 		redirige(request, response, page);
 	}
 	
