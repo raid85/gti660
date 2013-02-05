@@ -16,11 +16,11 @@ import modele.Representation;
 import modele.Panier;
 
 /**
- * Classe sous-controleur qui execute les opérations en rapport avec l'affichage et la lecture des messages
+ * Cette classe est le sous-controleur qui effectue le traitement selon les paramètres reçus
+ * dans la requête HTTP
  *
- * @author Nicolas Brousseau
  * @author Riad Chebli
- * @version 07/15/2012
+ * @version 2.0
  */
 
 public class Controleur {
@@ -30,14 +30,11 @@ public class Controleur {
 
 	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){		
 
-//		PaiementDAO payDAO = new PaiementDAO () ;
-
-		
 		try {
 		if (request.getParameterMap().size() < 1){
 				
 				
-				return "login.jsp";
+				return "Home.jsp";
 			}
 			
 		else if (request.getParameter("action").equals("afficherSpectacle")){
