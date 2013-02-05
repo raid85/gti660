@@ -8,7 +8,7 @@ public class Spectacle {
 	private String image;
 	private int duree;
 	private String description;
-	private Artiste artiste;
+	
 	private ArrayList representations = new ArrayList();
 	private int nbRepresentations;
 	
@@ -36,21 +36,9 @@ public class Spectacle {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Artiste getArtiste() {
-		return artiste;
-	}
-	public void setArtiste(Artiste artiste) {
-		this.artiste = artiste;
-	}
+
 	
-	public void ajouterRepresentation(Representation pRepresentation){
-		representations.add(pRepresentation);
-		nbRepresentations++;
-	}
-	
-	public Representation getRepresentation(int id){
-		return (Representation)representations.get(id);
-	}
+
 	
 	public int getId() {
 		return id;
