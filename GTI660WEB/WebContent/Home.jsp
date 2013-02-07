@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>E.T.S Movies Database Home</title>
+    <title>E.T.S Movies Database - Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -278,9 +278,9 @@
 				<div class="nav-collapse collapse span6">
 					<ul class="nav">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="Search.html">Search</a></li>
-						<li><a href="Contact.html">Contact</a></li>
-						<li><a href="ConnexionOldMember.html">Profil User</a></li>
+						<li><a href="Search.jsp">Search</a></li>
+						<li><a href="Contact.jsp">Contact</a></li>
+						<li><a href="ConnexionOldMember.jsp">Profil User</a></li>
 						<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 					</ul>
 				</div><!--/.nav-collapse -->
