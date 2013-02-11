@@ -30,13 +30,13 @@
 
     /* Special class on .container surrounding .navbar, used for positioning it into place. */
     .navbar-wrapper {
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
       right: 0;
       z-index: 10;
       margin-top: 20px;
-      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+      margin-bottom: 90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
     }
     .navbar-wrapper .navbar {
 
@@ -44,10 +44,10 @@
 
     /* Remove border and change up box shadow for more contrast */
     .navbar .navbar-inner {
-      border: 0;
-      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      border: 30;
+      -webkit-box-shadow: 0 10px 20px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 10x 20px rgba(0,0,0,.25);
+              box-shadow: 0 10px 20px rgba(0,0,0,.25);
     }
 
     /* Downsize the brand/project name a bit */
@@ -284,11 +284,16 @@
 						<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
 					</ul>
 				</div><!--/.nav-collapse -->
-					<ul class="nav pull-right">
-						<li>
-							<span class="add-on"><i class="icon-search"></i></span>
+					
+					<ul class="nav pull-right" >
+						
+						<li>						
+							<span class="add-on">
+							<i class="icon-search"></i></span>
 							<input type="text">
+							
 						</li>
+						
 					</ul><!-- Fin Search -->
 			</div><!-- /.navbar-inner -->
 		</div><!-- /.navbar -->
@@ -313,8 +318,7 @@
 
     <!-- Carousel
     ================================================== -->
-	<br><br><br><br><br><br><br>
-	<br>
+	
 	<div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
