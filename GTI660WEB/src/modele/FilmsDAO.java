@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 import com.sun.org.apache.regexp.internal.recompile;
 
-public class SpectacleDAO {
+public class FilmsDAO {
 	private static String driver = "org.sqlite.JDBC";
 	private static String url = "jdbc:sqlite:C:/Users/bruce/workspace/GTI525LAB2/Data/GTI525";
 	private static ResultSet rs;
@@ -22,19 +22,19 @@ public class SpectacleDAO {
 		return stmt.executeQuery(requete);	
 	}
 		
-	public static Spectacle[] getSpectacles() throws ClassNotFoundException, SQLException{
+	public static Film[] getFilms() throws ClassNotFoundException, SQLException{
 		rs = executeQuerry("SELECT COUNT(*) FROM Spectacle");
 		rs.next();
 		int rowCount = (Integer) rs.getObject(1);
 		rs = executeQuerry("SELECT Spectacle.ID_Spectacle, Spectacle.Nom, Spectacle.Description, Spectacle.Image FROM Spectacle");
-		Spectacle[] tableauSpectacles = new Spectacle[rowCount];
+		Film[] tableauSpectacles = new Film[rowCount];
 		int i = 0;
 		while ( rs.next() ) {
-			Spectacle spectacle = new Spectacle();
-            spectacle.setId((Integer) rs.getObject(1));
-            spectacle.setNom((String) rs.getObject(2));
-            spectacle.setDescription((String) rs.getObject(3));
-            spectacle.setImage((String) rs.getObject(4));
+			Film spectacle = new Film();
+//            spectacle.setId((Integer) rs.getObject(1));
+//            spectacle.setNom((String) rs.getObject(2));
+//            spectacle.setDescription((String) rs.getObject(3));
+//            spectacle.setImage((String) rs.getObject(4));
             tableauSpectacles[i] = spectacle;
             i++;
 		}

@@ -3,88 +3,101 @@ package modele;
 
 public class Client {
 	
-	private String NomClient ;
-	private String PreClient ;
-	private String CourrielClient ;
-	private String AddrClient ;
-	private String VilleClient ;
-	private String ProvinceClient ;
-	private String PaysClient ;
-	private String CCClient ;
-	private String ExpAClient ;
-	private String ExpMClient ;
-	private String cS ;
+	private int id = -1;
+	private String nomFamille = null;
+	private String prenom = null;
+	private String courriel = null;
+	private String tel = null;
+	private String anniv = null;
+	private String adresse = null;
+	private String ville = null;
+	private String province = null;
+	private String codePostal = null;
+	private String motDePasse = null;
+	private String forfaitID = null ;
+	private int creditID = -1 ;
 	
-	public String getNomClient() {
-		return NomClient;
+	
+	public int getId() {
+		return id;
 	}
-	public void setNomClient(String nomClient) {
-		NomClient = nomClient;
+	public String getNomFamille() {
+		return nomFamille;
 	}
-	public String getPreClient() {
-		return PreClient;
+	public String getPrenom() {
+		return prenom;
 	}
-	public void setPreClient(String preClient) {
-		PreClient = preClient;
+	public String getCourriel() {
+		return courriel;
 	}
-	public String getCourrielClient() {
-		return CourrielClient;
+	public String getTel() {
+		return tel;
 	}
-	public void setCourrielClient(String courrielClient) {
-		CourrielClient = courrielClient;
+	public String getAnniv() {
+		return anniv;
 	}
-	public String getAddrClient() {
-		return AddrClient;
+	public String getAdresse() {
+		return adresse;
 	}
-	public void setAddrClient(String addrClient) {
-		AddrClient = addrClient;
+	public String getVille() {
+		return ville;
 	}
-	public String getVilleClient() {
-		return VilleClient;
+	public String getProvince() {
+		return province;
 	}
-	public void setVilleClient(String villeClient) {
-		VilleClient = villeClient;
+	public String getCodePostal() {
+		return codePostal;
 	}
-	public String getProvinceClient() {
-		return ProvinceClient;
+	public String getMotDePasse() {
+		return motDePasse;
 	}
-	public void setProvinceClient(String provinceClient) {
-		ProvinceClient = provinceClient;
+	public String getForfaitID() {
+		return forfaitID;
 	}
-	public String getPaysClient() {
-		return PaysClient;
+	public int getCreditID() {
+		return creditID;
 	}
-	public void setPaysClient(String paysClient) {
-		PaysClient = paysClient;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getCCClient() {		
-		return CCClient;
+	public void setNomFamille(String nomFamille) {
+		this.nomFamille = nomFamille;
 	}
-	public String getCCs() {
-		String s = CCClient.substring(14);
-		return s;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
-	public void setCCClient(String cCClient) {
-		CCClient = cCClient;
+	public void setCourriel(String courriel) {
+		this.courriel = courriel;
 	}
-	public String getExpAClient() {
-		return ExpAClient;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
-	public void setExpAClient(String expAClient) {
-		ExpAClient = expAClient;
+	public void setAnniv(String anniv) {
+		this.anniv = anniv;
 	}
-	public String getExpMClient() {
-		return ExpMClient;
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
-	public void setExpMClient(String expMClient) {
-		ExpMClient = expMClient;
+	public void setVille(String ville) {
+		this.ville = ville;
 	}
-	public String getcS() {
-		return cS;
+	public void setProvince(String province) {
+		this.province = province;
 	}
-	public void setcS(String cS) {
-		this.cS = cS;
+	public void setCodePostal(String codePostal) {
+		this.codePostal = codePostal;
 	}
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+	public void setForfaitID(String forfaitID) {
+		this.forfaitID = forfaitID;
+	}
+	public void setCreditID(int creditID) {
+		this.creditID = creditID;
+	}
+	
+	
 
 	
 
