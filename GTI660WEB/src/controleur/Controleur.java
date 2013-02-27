@@ -6,10 +6,9 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.Client;
+import modele.*;
 
-//import modele.PaiementDAO;
-import modele.DelegateClients;
+
 
 
 /**
@@ -29,21 +28,14 @@ public class Controleur {
 
 		if (request.getParameterMap().size() < 1){	
 				
-				return "Home.jsp";
+				return "index.html";
 			}
 			
-		else if (request.getParameter("action").equals("afficherSpectacle")){
+		else if (request.getParameter("action").equals("login")){
 
-			try {
-//				request.setAttribute("spectacle", DelegateSpectacles.getRepresentations(Integer.parseInt(request.getParameter("spectacleid"))));
-			}
-			catch (NumberFormatException e){
-				return "erreur.jsp";
-			}
-			catch (ClassCastException e){
-				e.printStackTrace();
-				return "erreur.jsp";
-			}
+			DelegateClient myDelegate = new DelegateClient ();
+			myDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
+			
 			return "representations.jsp";
 		}
 		
