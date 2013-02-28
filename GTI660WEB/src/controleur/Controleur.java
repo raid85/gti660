@@ -35,8 +35,9 @@ public class Controleur {
 
 			DelegateClient myDelegate = new DelegateClient ();
 			myDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
+			if(myDelegate.checkClientLogin())return "search.jsp";
 			
-			return "representations.jsp";
+			else return "erreur.jsp.html";
 		}
 		
 	

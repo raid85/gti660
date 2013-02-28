@@ -67,6 +67,7 @@ public class Client {
 		this.prenom = prenom;
 	}
 	public void setCourriel(String courriel) {
+		
 		this.courriel = courriel;
 	}
 	public void setTel(String tel) {

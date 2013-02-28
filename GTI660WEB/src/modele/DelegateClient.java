@@ -11,8 +11,10 @@ import java.util.Collection;
  * @version 07/15/2012
  */
 
-public class DelegateClient {
-	Client beanClient ;
+public class DelegateClient {	
+	
+	private Client beanClient ;
+	private boolean isAuth = false;
 	
 	public DelegateClient (){
 		this.beanClient = new Client () ;
@@ -22,6 +24,11 @@ public class DelegateClient {
 		beanClient.setCourriel(Courriel);
 		beanClient.setMotDePasse(Password);
 		
+	}
+	
+	public boolean checkClientLogin(){
+//		TODO
+		return isAuth ;
 	}
 	
 
