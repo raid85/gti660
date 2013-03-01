@@ -25,22 +25,30 @@ public class Controleur {
 	
 
 	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){		
-
+		DelegateClient clientDelegate = new DelegateClient ();
+	
 		if (request.getParameterMap().size() < 1){	
 				
-				return "index2.html";
+				return "index.jsp";
 			}
 			
 		else if (request.getParameter("action").equals("login")){
 
-			DelegateClient myDelegate = new DelegateClient ();
-			myDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
-			if(myDelegate.checkClientLogin())return "search.jsp";
+			
+			clientDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
+			if(clientDelegate.checkClientLogin())return "search.jsp";
 			
 			else return "erreur.jsp";
 		}
 		
-	
+		else if (request.getParameter("action").equals("register")){
+			
+			
+			clientDelegate.createClient(request.getParameter("nom"),request.getParameter("prenom"),
+					request.getParameter("emailsignup"),request.getParameter("passwordsignup"));
+			return"FUCK U VASCO";
+			
+		}
 
 	
 		
