@@ -28,7 +28,7 @@ public class Controleur {
 
 		if (request.getParameterMap().size() < 1){	
 				
-				return "index.html";
+				return "index2.html";
 			}
 			
 		else if (request.getParameter("action").equals("login")){
@@ -37,7 +37,7 @@ public class Controleur {
 			myDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
 			if(myDelegate.checkClientLogin())return "search.jsp";
 			
-			else return "erreur.jsp.html";
+			else return "erreur.jsp";
 		}
 		
 	
