@@ -14,7 +14,7 @@ Released   : 20120325
 <%@ page import="modele.DelegateClient"%>
 <%
 String [] infos = new String[10];
-infos = (String[])request.getAttribute("infosClient");
+infos = (String[])request.getSession().getAttribute("infosClient");
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,6 +24,7 @@ infos = (String[])request.getAttribute("infosClient");
 <title>GTI660 BD Multimedia</title>
 <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
 <link href="style1.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="styleR.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
@@ -43,11 +44,11 @@ infos = (String[])request.getAttribute("infosClient");
   <div id="menu">
 	  <ul>
 		  <li>
-		  <a href="index.jsp">Home</a></li>
-		  <li><a href="search.jsp">Search</a></li>
-		  <li><a href="config.jsp">DB Configuration & Status</a></li>
-		  <li class="current_page_item"><a href="profile.jsp">Profile</a></li>
-		  <li><a href=signout.jsp">Sign Out</a></li>
+		  <li><a href="./?action=home">Home</a></li>
+		  <li><a href="./?action=search">Search</a></li>
+		  <li><a href="./?action=config">DB Configuration & Status</a></li>
+		  <li  class="current_page_item"><a href="">Profile</a></li>
+		  <li><a href="./?action=signout ">Sign Out</a></li>
 		
 	  </ul>
   </div>
@@ -56,11 +57,59 @@ infos = (String[])request.getAttribute("infosClient");
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
-					<div class="post">
-						<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-						<div class="entry">
-							<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.  Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.	Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. </p>
-						</div>
+					<div class="post">						
+						<div id="wrapperForm">
+						 	<h1>Modification du profil</h1>
+                            <form  action="./" autocomplete="on" method="post"> 
+                            <div id="three-columns">
+		<div id="column1">
+			  <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Nom</label>
+                                    <input id="nom" name="nom" required="required" type="text" placeholder="nom" />
+                                </p>
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Prenom</label>
+                                    <input id="prenom" name="prenom" required="required" type="text" placeholder="prenom" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" >Courriel </label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                  <p> 
+                                    <label for="tel" class="uname">Telephone</label>
+                                    <input id="tel" name="tel" required="required" type="text" placeholder="123-456-7890"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Mot de passe </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+		</div>
+		<div id="column2">
+			 <p> 
+                 					<label for="emailsignup" class="youmail" data-icon="e" >Courriel </label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                  <p> 
+                                    <label for="tel" class="uname">Telephone</label>
+                                    <input id="tel" name="tel" required="required" type="text" placeholder="123-456-7890"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Mot de passe </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+									<input type="hidden" name="action"  value="register" />
+								</p>  
+		</div>
+		<div id="column3">
+			
+		</div>
+	</div>
+                              
+                            </form>
+                        
+                        </div>
 					</div>
 				</div>
 				<!-- end #content -->

@@ -36,12 +36,13 @@ Released   : 20120325
   <!-- end #header -->
   <div id="menu">
    
-	  <ul>
-		  <li class="current_page_item"><a href="">Home</a></li>
+	  <ul>	 
+	  		
+		  <li class="current_page_item" ><a href="">Home</a></li>
 		  <li><a href="">Search</a></li>
 		  <li><a href="">DB Configuration & Status</a></li>
 		  <li><a href="">Profile</a></li>
-		  <li><a href="">Sign Out</a></li>
+		  <li><a href="">Sign Out</a></li>	  
 		
 	  </ul>
 	

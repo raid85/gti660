@@ -36,11 +36,11 @@ Released   : 20120325
   <!-- end #header -->
   <div id="menu">
 	  <ul>
-		  <li><a href="index.jsp">Home</a></li>
-		  <li class="current_page_item"><a href="search.jsp">Search</a></li>
-		  <li><a href="config.jsp">DB Configuration & Status</a></li>
-		  <li><a href="profile.jsp">Profile</a></li>
-		  <li><a href="signout.jsp">Sign Out</a></li>
+		  <li><a href="./?action=home">Home</a></li>
+		  <li class="current_page_item"><a href="">Search</a></li>
+		  <li><a href="./?action=config">DB Configuration & Status</a></li>
+		  <li><a href="./?action=profile">Profile</a></li>
+		  <li><a href="./?action=signout">Sign Out</a></li>
 		
 	  </ul>
   </div>
