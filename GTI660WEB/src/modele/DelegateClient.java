@@ -13,27 +13,20 @@ import java.util.Collection;
 
 public class DelegateClient {	
 	
-	private Client beanClient ;
-	private boolean isAuth = false;
+	private ClientDAO clientDAO ;
+	
 	
 	public DelegateClient (){
-		this.beanClient = new Client () ;
+		this.clientDAO = new ClientDAO () ;
 	}
 
 	public void setLogin(String Courriel, String Password) {
-		beanClient.setCourriel(Courriel);
-		beanClient.setMotDePasse(Password);
-//		System.out.println(beanClient.getCourriel());
-//		System.out.println(beanClient.getMotDePasse());
+		clientDAO.login(Courriel, Password);
 		
 	}
 	
 	public boolean createClient (String nomFamille, String prenom, String Courriel ,String Password) {
-		//Methode a implémenter pour créer le client a partir des parmas
-		beanClient.setCourriel(Courriel);
-		beanClient.setMotDePasse(Password);
-		beanClient.setPrenom(prenom);
-		beanClient.setNomFamille(nomFamille);
+		clientDAO.createClient(nomFamille, prenom, Courriel, Password);
 //		System.out.println(beanClient.getNomFamille());
 
 		//STOB
@@ -42,11 +35,15 @@ public class DelegateClient {
 		
 	}
 	
-	public boolean checkClientLogin(){
-//		TODO
-		isAuth =true;
-		return isAuth ;
+	public String[] getClientInfos(){
+		return clientDAO.client2Array() ;
 	}
+	
+	public boolean checkClientLogin(){
+		return clientDAO.isAuth() ;
+	}
+	
+
 	
 
 		

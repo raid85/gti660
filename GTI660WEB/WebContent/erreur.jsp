@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Billets En File</title>
+<title>Oups !</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="default.css" rel="stylesheet" type="text/css" />
+<link href="style1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- start header -->
@@ -19,14 +19,15 @@
 	<div id="page">
 		<!-- start content -->
 		<div id="content">
-			<div class="alert">			
-				<h3>Erreur !</h>
-				<h2>Erreur interne</h2>
+					
+				<h1>Erreur !</h1>
+				<h2>Cher usager, une erreur interne nous empeche de traiter votre requete, veuillez
+				aviser l'administrateur du site</h2>
 				<br />		
 				<br />	
 				<input type='button' name='acheter' value='Page daccueil' ONCLICK="window.location.href='./'"/>
 				
-			</div>
+			
 		</div>
 		<!-- end content -->
 		<!-- start sidebar -->

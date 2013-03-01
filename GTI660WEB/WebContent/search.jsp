@@ -36,11 +36,11 @@ Released   : 20120325
   <!-- end #header -->
   <div id="menu">
 	  <ul>
-		  <li class="current_page_item"><a href="index.jsp">Home</a></li>
-		  <li><a href="#">Search</a></li>
-		  <li><a href="#">DB Configuration & Status</a></li>
-		  <li><a href="#">Profile</a></li>
-		  <li><a href="#">Sign Out</a></li>
+		  <li><a href="index.jsp">Home</a></li>
+		  <li class="current_page_item"><a href="search.jsp">Search</a></li>
+		  <li><a href="config.jsp">DB Configuration & Status</a></li>
+		  <li><a href="profile.jsp">Profile</a></li>
+		  <li><a href="signout.jsp">Sign Out</a></li>
 		
 	  </ul>
   </div>
@@ -48,7 +48,7 @@ Released   : 20120325
 
 	
   <div id="welcome">
-	  <h2 class="title"><a href="#">Recherche</a></h2>
+	  <h2 class="title"><a href="">Recherche</a></h2>
 	  <div class="entry">
 		  <p>Ceci est la page de recherche blablablahblala</p>
 	  </div>
