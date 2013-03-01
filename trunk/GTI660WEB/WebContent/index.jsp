@@ -35,14 +35,16 @@ Released   : 20120325
   </div>
   <!-- end #header -->
   <div id="menu">
+   
 	  <ul>
-		  <li class="current_page_item"><a href="#">Home</a></li>
-		  <li><a href="#">Search</a></li>
-		  <li><a href="#">DB Configuration & Status</a></li>
-		  <li><a href="#">Profile</a></li>
-		  <li><a href="#">Sign Out</a></li>
+		  <li class="current_page_item"><a href="">Home</a></li>
+		  <li><a href="">Search</a></li>
+		  <li><a href="">DB Configuration & Status</a></li>
+		  <li><a href="">Profile</a></li>
+		  <li><a href="">Sign Out</a></li>
 		
 	  </ul>
+	
   </div>
   <!-- end #menu -->
 
@@ -50,7 +52,7 @@ Released   : 20120325
   <div id="welcome">
 	  <h2 class="title"><a href="#">Bienvenue</a></h2>
 	  <div class="entry">
-		  <p>Ceci est <strong>ETS-MDB (ETS Movie database) </strong>, le portail web vers notre base de données multimédia, inscrivez vous!
+		  <p>Ceci est <strong>ETS-MDB (ETS Movie database) </strong>, le portail web vers notre base de donnees multimedia, inscrivez vous!
 		   C'est gratuit ! :)</p>
 	  </div>
   </div>
@@ -112,8 +114,8 @@ Released   : 20120325
 									<input type="hidden" name="action"  value="register" />
 								</p>
                                 <p class="change_link">  
-									Already a member ?
-									<a href="#tologin" class="to_register"> Go and log in </a>
+									Deja membre ?
+									<a href="#tologin" class="to_register"> Allez au login</a>
 								</p>
                             </form>
                         </div>

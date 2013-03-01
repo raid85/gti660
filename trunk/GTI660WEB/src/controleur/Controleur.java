@@ -26,7 +26,8 @@ public class Controleur {
 
 	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){		
 		DelegateClient clientDelegate = new DelegateClient ();
-	
+		
+		
 		if (request.getParameterMap().size() < 1){	
 				
 				return "index.jsp";
@@ -36,7 +37,11 @@ public class Controleur {
 
 			
 			clientDelegate.setLogin (request.getParameter("username"),request.getParameter("password"));
-			if(clientDelegate.checkClientLogin())return "search.jsp";
+			if(clientDelegate.checkClientLogin()){
+				System.out.println(""+clientDelegate.getClientInfos()[2].toString());
+				request.setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
+				
+				return "profile.jsp";}
 			
 			else return "erreur.jsp";
 		}
@@ -44,9 +49,10 @@ public class Controleur {
 		else if (request.getParameter("action").equals("register")){
 			
 			
-			clientDelegate.createClient(request.getParameter("nom"),request.getParameter("prenom"),
-					request.getParameter("emailsignup"),request.getParameter("passwordsignup"));
-			return"FUCK U VASCO";
+			if(clientDelegate.createClient(request.getParameter("nom"),request.getParameter("prenom"),
+					request.getParameter("emailsignup"),request.getParameter("passwordsignup")))
+			return"profilecompleted.jsp";
+			else return "erreur.jsp" ;
 			
 		}
 

@@ -189,7 +189,7 @@ a:hover {
 }
 
 #menu .current_page_item a {
-	color: #FFFFFF;
+	color: #0D13B6;
 }
 
 /* Page */
@@ -303,6 +303,8 @@ a:hover {
 	border-bottom: 1px dotted #292929;
 	margin: 0px 0px;
 	border-right: none;
+	padding-left: 20px;
+	background: url(images/img03.gif) no-repeat left 6px;
 }
 
 #sidebar li a {
