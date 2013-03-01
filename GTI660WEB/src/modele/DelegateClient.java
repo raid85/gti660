@@ -23,11 +23,28 @@ public class DelegateClient {
 	public void setLogin(String Courriel, String Password) {
 		beanClient.setCourriel(Courriel);
 		beanClient.setMotDePasse(Password);
+//		System.out.println(beanClient.getCourriel());
+//		System.out.println(beanClient.getMotDePasse());
+		
+	}
+	
+	public boolean createClient (String nomFamille, String prenom, String Courriel ,String Password) {
+		//Methode a implémenter pour créer le client a partir des parmas
+		beanClient.setCourriel(Courriel);
+		beanClient.setMotDePasse(Password);
+		beanClient.setPrenom(prenom);
+		beanClient.setNomFamille(nomFamille);
+//		System.out.println(beanClient.getNomFamille());
+
+		//STOB
+		return false ;
+	
 		
 	}
 	
 	public boolean checkClientLogin(){
 //		TODO
+		isAuth =true;
 		return isAuth ;
 	}
 	

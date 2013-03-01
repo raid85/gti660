@@ -54,6 +54,7 @@ line-height:36px; }
 	 padding: 0;
 	 margin: 0 auto;
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+	 position: relative;	
 }
 
 /** fonts used for the icons **/ 
