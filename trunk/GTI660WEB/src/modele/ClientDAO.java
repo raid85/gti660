@@ -11,11 +11,12 @@ public class ClientDAO {
 	}
 
 	public boolean login(String Courriel, String Password) {
-		beanClient.setCourriel(Courriel);
-		beanClient.setMotDePasse(Password);
+		
 		if(true){//TODO Faire un select dans la bd pour vérifier les infos clients
 			//TODO POPULER LE BEAN CLIENT A PARTIR DE LA BD SI LE LOGIN EST RÉUSSI
-			
+			beanClient.setCourriel(Courriel);
+			beanClient.setMotDePasse(Password);
+			beanClient.setNomFamille("Populé de la db avec login reussi");
 			isAuth = true;
 			return isAuth;} 
 

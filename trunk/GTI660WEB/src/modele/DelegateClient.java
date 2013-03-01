@@ -29,8 +29,8 @@ public class DelegateClient {
 		clientDAO.createClient(nomFamille, prenom, Courriel, Password);
 //		System.out.println(beanClient.getNomFamille());
 
-		//STOB
-		return false ;
+		//TODO Change to false when done
+		return true ;
 	
 		
 	}
