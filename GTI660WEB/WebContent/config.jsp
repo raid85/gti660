@@ -57,27 +57,43 @@ infosC = (String[])request.getSession().getAttribute("infosConnection");
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
-					<div class="post">						
+											
 						<div id="wrapperForm">
-						 	<h1>Modification des paramètres de connection</h1>
+						 	<h1>Modification des parametres de connection</h1>
                             <form  action="./" autocomplete="on" method="post"> 
                             <div id="three-columns">
 		<div id="column1">
-			 
-                              
-		</div>
-		<div id="column2">			
-                                 
-                                  
-		</div>
-		<div id="column3">
-			
-		</div>
-	</div>
-                              
-                            </form>
-                        
+			<p> 
+			<label for="serveur" class="uname">Serveur</label>
+			<input id="serveur" name="serveur" required="required" type="text" placeholder="oracle-11.logti.etsmtl.ca"/>
+			</p> 
+         <p> 
+          <label for="sid" class="uname">SID</label>
+          <input id="sid" name="sid" required="required" type="text" placeholder="GTI660"/>
+         </p>     
+         <p> 
+          <label for="undb" class="uname"  data-icon="u">User Name</label>
+          <input id="undb" name="undb" required="required" type="text" placeholder="equipe4"/>
+         </p> 
+       
+		<p> 
+          <label for="password" class="youpasswd" data-icon="p">Password</label>
+          <input id="password" name="password" required="required" type="password" placeholder="8M2Fbjt6" /> 
+        </p>
+        <br>
+                <p> 
+			<input type="submit" value="Modify & Re-Connect"/> 
+		    <input type="hidden" name="action"  value="reconnect" />
+		</p> 
+       
+              </div>
+             
+            
+          
+		
+              </form>
                         </div>
+                        
 					</div>
 				</div>
 				<!-- end #content -->
@@ -101,11 +117,6 @@ infosC = (String[])request.getSession().getAttribute("infosConnection");
 			</div>
 		</div>
 	</div>
-  
-
-			
-   
-
   <!-- end #page --> 
 <div id="footer">
   <p>Copyright (c) 2013 Riad Chebli . All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
