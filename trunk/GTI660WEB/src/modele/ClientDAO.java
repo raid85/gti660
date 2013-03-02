@@ -69,4 +69,25 @@ public class ClientDAO {
 		return isAuth;
 	}
 
+	public boolean updateClient(String nom, String prenom, String emailsignup,
+			String tel, String adresse, String ville, String prov, String cc,
+			String anniv, String passwordsignup) {
+		if(true/**InsertBD**/){
+			beanClient.setNomFamille(nom);
+			beanClient.setPrenom(prenom);
+			beanClient.setCourriel(emailsignup);
+			beanClient.setTel(tel);
+			beanClient.setAdresse(adresse);
+			beanClient.setVille(ville);
+			beanClient.setProvince(prov);
+			beanClient.setCreditID(/**viens de la BD.*/-1);
+			beanClient.setAnniv(anniv);
+			beanClient.setMotDePasse(passwordsignup);
+			
+		}
+		// TODO UPDATE DANS LA BD
+		//RETURNS TRU SI RÉUSSI
+		return true;
+	}
+
 }
