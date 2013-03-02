@@ -67,6 +67,7 @@ public class Controleur {
 					request.getParameter("adresse"),
 					request.getParameter("ville"),
 					request.getParameter("prov"),
+					request.getParameter("cp"),
 					request.getParameter("cc"),
 					request.getParameter("anniv"),
 					request.getParameter("passwordsignup"));

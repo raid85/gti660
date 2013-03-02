@@ -71,7 +71,7 @@ public class ClientDAO {
 
 	public boolean updateClient(String nom, String prenom, String emailsignup,
 			String tel, String adresse, String ville, String prov, String cc,
-			String anniv, String passwordsignup) {
+			String anniv, String passwordsignup, String cp) {
 		if(true/**InsertBD**/){
 			beanClient.setNomFamille(nom);
 			beanClient.setPrenom(prenom);
@@ -83,6 +83,7 @@ public class ClientDAO {
 			beanClient.setCreditID(/**viens de la BD.*/-1);
 			beanClient.setAnniv(anniv);
 			beanClient.setMotDePasse(passwordsignup);
+			beanClient.setCodePostal(cp);
 			
 		}
 		// TODO UPDATE DANS LA BD

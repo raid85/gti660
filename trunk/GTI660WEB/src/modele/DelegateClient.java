@@ -44,8 +44,8 @@ public class DelegateClient {
 	public boolean modifyClient(String nom, String prenom,
 			String emailsignup, String tel, String adresse,
 			String ville, String prov, String cc,
-			String anniv, String passwordsignup) {
-		return clientDAO.updateClient(nom,prenom,emailsignup,tel,adresse,ville,prov,cc,anniv,passwordsignup);
+			String anniv, String passwordsignup, String cp) {
+		return clientDAO.updateClient(nom,prenom,emailsignup,tel,adresse,ville,prov,cc,anniv,passwordsignup,cp);
 		
 	}
 	
