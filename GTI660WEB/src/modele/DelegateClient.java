@@ -20,8 +20,8 @@ public class DelegateClient {
 		this.clientDAO = new ClientDAO () ;
 	}
 
-	public void setLogin(String Courriel, String Password) {
-		clientDAO.login(Courriel, Password);
+	public boolean login(String Courriel, String Password) {
+		return clientDAO.login(Courriel, Password);
 		
 	}
 	
@@ -39,8 +39,14 @@ public class DelegateClient {
 		return clientDAO.client2Array() ;
 	}
 	
-	public boolean checkClientLogin(){
-		return clientDAO.isAuth() ;
+	
+
+	public boolean modifyClient(String nom, String prenom,
+			String emailsignup, String tel, String adresse,
+			String ville, String prov, String cc,
+			String anniv, String passwordsignup) {
+		return clientDAO.updateClient(nom,prenom,emailsignup,tel,adresse,ville,prov,cc,anniv,passwordsignup);
+		
 	}
 	
 

@@ -50,7 +50,6 @@ height:36px;
 line-height:36px; }
 #container_demo{
 	 text-align: left;
-	 margin: 0;
 	 padding: 0;
 	 margin: 0 auto;
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
@@ -87,7 +86,7 @@ a.hiddenanchor{
 
 
 #wrapperForm{
-	width: 200px;
+	width: 0px auto;
 	right: 0px;
 	min-height: 0px auto;	
 	margin: 0px ;	
@@ -137,7 +136,7 @@ a.hiddenanchor{
 }
 
 #wrapperForm p{
-	margin-bottom:0px;
+	margin-bottom:5px;
 }
 #wrapperForm p:first-child{
 	margin: 0px;
@@ -205,6 +204,9 @@ input {
 
 /*styling both submit buttons */
 #wrapperForm p.button input{
+	position: relative;
+	margin-right: 100px;
+	margin-left: 100px;
 	width: 30%;
 	cursor: pointer;	
 	background: rgb(61, 157, 179);
@@ -213,7 +215,7 @@ input {
 	color: #fff;
 	font-size: 24px;	
 	border: 1px solid rgb(28, 108, 122);	
-	margin-bottom: 10px;	
+	margin-top: 20px;	
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;

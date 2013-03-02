@@ -65,11 +65,11 @@ infos = (String[])request.getSession().getAttribute("infosClient");
 		<div id="column1">
 			  <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nom</label>
-                                    <input id="nom" name="nom" required="required" type="text" placeholder="nom" />
+                                    <input id="nom" name="nom" required="required" type="text" placeholder="Hendrix" />
                                 </p>
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Prenom</label>
-                                    <input id="prenom" name="prenom" required="required" type="text" placeholder="prenom" />
+                                    <input id="prenom" name="prenom" required="required" type="text" placeholder="Jimmy" />
                                 </p>
                                 <p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" >Courriel </label>
@@ -79,30 +79,47 @@ infos = (String[])request.getSession().getAttribute("infosClient");
                                     <label for="tel" class="uname">Telephone</label>
                                     <input id="tel" name="tel" required="required" type="text" placeholder="123-456-7890"/>
                                 </p>
-                                <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Mot de passe </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                                </p>
+                              
 		</div>
 		<div id="column2">
 			 <p> 
-                 					<label for="emailsignup" class="youmail" data-icon="e" >Courriel </label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                 					<label for="adresse" class="uname" >Adresse </label>
+                                    <input id="adresse" name="adresse" required="required" type="text" placeholder="1111 Rue Notre-Dame"/> 
                                 </p>
                                   <p> 
-                                    <label for="tel" class="uname">Telephone</label>
-                                    <input id="tel" name="tel" required="required" type="text" placeholder="123-456-7890"/>
+                                    <label for="ville" class="uname">Ville</label>
+                                    <input id="ville" name="ville" required="required" type="text" placeholder="Montréal"/>
                                 </p>
                                 <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Mot de passe </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <label for="prov" class="uname">Province</label>
+                                    <input id="prov" name="prov" required="required" type="text" placeholder="Québec"/>
                                 </p>
-                                <p class="signin button"> 
-									<input type="submit" value="Sign up"/> 
-									<input type="hidden" name="action"  value="register" />
-								</p>  
+                                   <p> 
+                                    <label for="cp" class="uname">Code Postal</label>
+                                    <input id="cp" name="cp" required="required" type="text" placeholder="L1L-2N2"/>
+                                </p>
+                                 
+                                  
 		</div>
 		<div id="column3">
+		 <p> 
+            <label for="cc" class="uname">Carte de crédit</label>
+            <input id="cc" name="cc" required="required" type="text" placeholder="1234-4567-8901-2345"/>
+         </p>
+         <p> 
+          <label for="anniv" class="uname">Anniversaire</label>
+          <input id="anniv" name="anniv" required="required" type="text" placeholder="JJ-MM-AAAA"/>
+         </p>
+         <p> 
+         <label for="passwordsignup" class="youpasswd" data-icon="p">Mot de passe </label>
+          <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="passW0R123"/>
+          </p>
+          <p class="signin button"> 
+			<input type="submit" value="Modifier"/> 
+		    <input type="hidden" name="action"  value="modifyProfile" />
+		</p>  
+		
+		  
 			
 		</div>
 	</div>
