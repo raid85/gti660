@@ -27,6 +27,7 @@ public class Controleur {
 	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){		
 		DelegateClient clientDelegate = new DelegateClient ();
 		DBConnection myConnection = new DBConnection();
+		request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
 
 		if (request.getParameterMap().size() < 1){
 			return "index.jsp";
