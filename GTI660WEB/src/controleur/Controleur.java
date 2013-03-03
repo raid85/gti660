@@ -28,14 +28,13 @@ public class Controleur {
 		DelegateClient clientDelegate = new DelegateClient ();
 		DBConnection myConnection = new DBConnection();
 
-
-		if (request.getParameterMap().size() < 1){	
-
-
+		if (request.getParameterMap().size() < 1){
 			return "index.jsp";
 		}
+		
+		else if (myConnection.isUp()){		
 
-		else if (request.getParameter("action").equals("login")){			
+		if (request.getParameter("action").equals("login")){
 
 			if(clientDelegate.login(request.getParameter("username"),request.getParameter("password"))){	
 				//On set les infos clients dans la session si ils sont chargés dans le bean par le DAOClient
@@ -47,16 +46,13 @@ public class Controleur {
 
 		else if (request.getParameter("action").equals("register")){
 
-
 			if(clientDelegate.createClient(request.getParameter("nom"),request.getParameter("prenom"),
 					request.getParameter("emailsignup"),request.getParameter("passwordsignup"))){
 				//On set les infos du nouveau clients dans la session si insert du DAO a réussi
 				request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
 				return "profile.jsp";
 			}
-
 			else return "erreur.jsp" ;
-
 		}
 		else if (request.getParameter("action").equals("modifyProfile")){				
 
@@ -73,7 +69,6 @@ public class Controleur {
 					request.getParameter("passwordsignup"));
 			request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
 			return "profile.jsp";
-
 		}
 
 		else if (request.getParameter("action").equals("signout")){	
@@ -97,6 +92,8 @@ public class Controleur {
 			return "search.jsp";
 		}
 		else return "erreur.jsp";
+		} else return "config.jsp";
+		
 
 	}
 
