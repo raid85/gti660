@@ -49,7 +49,7 @@ public class RSQConnect
 
 		try
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriverzzz").newInstance();
+			Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 		} 
 		catch (ClassNotFoundException e)
 		{

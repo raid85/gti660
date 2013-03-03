@@ -69,7 +69,7 @@ public class Controleur {
 					request.getParameter("anniv"),
 					request.getParameter("passwordsignup"));
 			request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
-			return "profile.jsp";
+			return "profile.jsp"; 
 		}
 
 		else if (request.getParameter("action").equals("signout")){	
