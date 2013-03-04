@@ -43,7 +43,7 @@ infosC = (String[])request.getSession().getAttribute("infosConnection");
   <!-- end #header -->
   <div id="menu">
 	  <ul>
-		  <li>
+		
 		  <li><a href="./?action=home">Home</a></li>
 		  <li><a href="./?action=search">Search</a></li>
 		  <li class="current_page_item"><a href="">DB Configuration & Status</a></li>
@@ -89,7 +89,7 @@ infosC = (String[])request.getSession().getAttribute("infosConnection");
               </div>
              
             
-          
+          </div>
 		
               </form>
                         </div>
@@ -116,7 +116,7 @@ infosC = (String[])request.getSession().getAttribute("infosConnection");
 				<div style="clear: both;">&nbsp;</div>
 			</div>
 		</div>
-	</div>
+	
   <!-- end #page --> 
 <div id="footer">
  <%if(request.getSession().getAttribute("dbUP")=="true"){%>
