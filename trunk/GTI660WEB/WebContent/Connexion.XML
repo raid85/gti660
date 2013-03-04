@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<CONNECTION>
+	<DBAUTHENTICATION>
+		<USER>equipe4</USER>
+		<PASSWORD>8M2Fbjt6</PASSWORD>
+		<HOST>oracle-11.logti.etsmtl.ca</HOST>
+		<PORT>1521</PORT>
+		<DBNAME>GTI660</DBNAME>
+	</DBAUTHENTICATION>
+
+</CONNECTION>
