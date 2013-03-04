@@ -3,7 +3,7 @@ package modele;
 
 public class Client {
 	
-	private int id = -1;
+	private int id =-1;
 	private String nomFamille = null;
 	private String prenom = null;
 	private String courriel = null;

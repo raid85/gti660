@@ -22,7 +22,13 @@ public class RSQConnect
 	RSQQuery currentQuery= new RSQQuery();
 	RSQResult result = null;
 
+	public String getOutput() {
+		return output;
+	}
 
+	public void setOutput(String output) {
+		this.output = output;
+	}
 
 	/**
 	 * Info on the database requested
