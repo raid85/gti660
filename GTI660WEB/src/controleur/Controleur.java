@@ -24,40 +24,50 @@ public class Controleur {
 	private static final long serialVersionUID = 1391688820894808468L;
 
 
-	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){		
-		DelegateClient clientDelegate = new DelegateClient ();
-		DBConnection myConnection = new DBConnection();
-		request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
+	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){				
 
 		if (request.getParameterMap().size() < 1){
+			 
+			DelegateClient clientDelegate = new DelegateClient ((String)request.getSession().getAttribute("xmlPath"));	
+			DBConnection myConnection = new DBConnection();		
+			request.getSession().setAttribute("delegateClient",(DelegateClient) clientDelegate);
+			request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
+			request.getSession().setAttribute("dbUP", "true");
+			request.getSession().setAttribute("myConnection", (DBConnection)myConnection);
 			return "index.jsp";
 		}
 		
-		else if (myConnection.isUp()){		
+		else if (request.getSession().getAttribute("dbUP")=="true"){		
 
+			
 		if (request.getParameter("action").equals("login")){
-
-			if(clientDelegate.login(request.getParameter("username"),request.getParameter("password"))){	
+			
+			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
+			
+			if(myDel.login((String)request.getParameter("username"),(String) request.getParameter("password"),(DBConnection) request.getSession().getAttribute("myConnection"))){	
+				
+				
 				//On set les infos clients dans la session si ils sont chargés dans le bean par le DAOClient
-				request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
+				request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
 				return "search.jsp";}
 
 			else return "erreur.jsp";
 		}
 
 		else if (request.getParameter("action").equals("register")){
-
-			if(clientDelegate.createClient(request.getParameter("nom"),request.getParameter("prenom"),
+			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
+			if(myDel.createClient(request.getParameter("nom"),request.getParameter("prenom"),
 					request.getParameter("emailsignup"),request.getParameter("passwordsignup"))){
-				//On set les infos du nouveau clients dans la session si insert du DAO a réussi
-				request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
+				//On set les infos  du nouveau clients dans la session si insert du DAO a réussi
+				request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
+				request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
 				return "profile.jsp";
 			}
 			else return "erreur.jsp" ;
 		}
 		else if (request.getParameter("action").equals("modifyProfile")){				
-
-			clientDelegate.modifyClient(request.getParameter("nom"),
+			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
+			myDel.modifyClient(request.getParameter("nom"),
 					request.getParameter("prenom"),
 					request.getParameter("emailsignup"),
 					request.getParameter("tel"),
@@ -68,7 +78,8 @@ public class Controleur {
 					request.getParameter("cc"),
 					request.getParameter("anniv"),
 					request.getParameter("passwordsignup"));
-			request.getSession().setAttribute("infosClient",(String[])clientDelegate.getClientInfos());
+			request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
+			request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
 			return "profile.jsp"; 
 		}
 
@@ -78,7 +89,7 @@ public class Controleur {
 
 		else if (request.getParameter("action").equals("config")){
 			
-			request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
+			
 			return "config.jsp";
 		}
 

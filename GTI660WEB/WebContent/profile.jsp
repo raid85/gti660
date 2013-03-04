@@ -157,6 +157,12 @@ infos = (String[])request.getSession().getAttribute("infosClient");
 
   <!-- end #page --> 
 <div id="footer">
+ <%if(request.getSession().getAttribute("dbUP")=="true"){%>
+	 <p><img width="25px" height="25px"  class="picture" src="images/dbonline.png"%> Statut de la connexion à la bd : Ouverte</p>
+	  <%}%>
+	  <%if(request.getSession().getAttribute("dbUP")=="false"){%>
+	 <p><img width="25px" height="25px"  class="picture" src="images/dboffline.png"%> Statut de la connexion à la bd : Fermée</p>
+	  <%}%>
   <p>Copyright (c) 2013 Riad Chebli . All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
 </div>
 <!-- end #footer -->

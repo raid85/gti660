@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<QUERIES>
+   	<SQL id="GetFilms">
+   		<REQUETE>SELECT Films.id, Films.Titre, Films.Poster, Films.Duree, Films.Annee, Genres.Description FROM FILMS, LANGUES WHERE TITRE LIKE '%{0}%' AND ANNEE = {1}  AND (DUREE {3} AND DUREE {4}) AND (LANGUE.ID = {2} AND LANGUE.ID = LANGUESFILMS.LANGUEID AND LANGUESFILMS.FILMID = FILM.ID)</REQUETE>
+   	</SQL>
+
+   	<SQL id="GetContributions">
+		<!-- Le  paramétre 0 recoit le nom à rechercher et le paramètre 1 recoit la liste des id des jobs qu'on veut afficher séparées par une virgule -->
+        <REQUETE>SELECT Personnes.id, UPPER(Personnes.Nom), Personnes.Anniversaire, Personnes.Lieu, Jobs.Titre FROM Personnes, Jobs, PersonnesJobsFilms WHERE Personnes.id = PersonnesJobsFilms.PersonnesId AND PersonnesJobsFilms.JobsId = Jobs.id AND Personnes.Nom LIKE '%{0}%' AND Jobs.id IN ({1})</REQUETE>
+   	</SQL>
+
+   	<SQL id="GetFilmsByGenre">
+		<!-- Le paramètre 0 recoit la liste des id des genres séparées par une virgule -->
+        <REQUETE>SELECT Films.id, Films.Titre, Films.Poster, Films.ResumeFilm, Films.Annee, Films.Duree, Genres.Description FROM Films, FilmsGenres, Genres WHERE Films.id = FilmsGenres.FilmId AND Genres.id = FilmsGenres.GenresId AND Genres.id IN ({0}) ORDER BY Genres.Description</REQUETE>
+   	</SQL>
+
+	<SQL id="GetClient">
+		<!-- Le paramétre 0 recoit le nom ou le courriel du client à rechercher -->
+        <REQUETE>SELECT * FROM Clients WHERE UPPER(Courriel) = '{0}' </REQUETE>
+   	</SQL>
+
+    <SQL id="GetClientProfile">
+		<!-- Le paramétre 0 recoit le ID due la personne à rechercher -->
+        <REQUETE>SELECT * FROM Clients WHERE id = {0} </REQUETE>
+   	</SQL>
+
+    <SQL id="GetClientCreditInfo">
+		<!-- Le paramétre 0 recoit le id du client pour qui on veut afficher les informations de credit -->
+		<REQUETE>SELECT Clients.NomFamille, Clients.Prenom, InfoCredit.Id, InfoCredit.Carte, InfoCredit.NoCarte, InfoCredit.ExpMois, InfoCredit.ExpAnnee from Clients,infocredit WHERE Clients.Creditid = InfoCredit.id AND Clients.id = {0}</REQUETE>
+   	</SQL>
+
+	<SQL id="GetFilmsClients">
+		<!-- Le paramétre 0 recoit le id du client pour qui l'on veut afficher la liste des films selectionnés -->
+        <REQUETE>SELECT Films.id, Films.Titre FROM Films, FilmsClients WHERE Films.id = FilmsClients.FilmId AND FilmsClients.ClientId = {0}</REQUETE>	
+   	</SQL>
+
+	<SQL id="UpdateClientProfile">
+        <REQUETE>UPDATE Clients SET NomFamille = '{1}',  Prenom = '{2}', Courriel = '{3}', Tel= '{4}', Adresse = '{5}', 
+        Ville = '{6}', Province = '{7}' , CodePostal = '{8}' , MotDePasse = '{9}' WHERE id = {0}</REQUETE>	  
+   	</SQL>
+	
+	<SQL id="UpdateClientCreditInfo">
+        <REQUETE>UPDATE InfoCredit SET  Carte = '{1}', NoCarte = '{2}', ExpMois = {3}, ExpAnnee = {4} WHERE id = {0}</REQUETE>	
+   	</SQL>
+
+	<SQL id="UpdateClientCreditAmount">
+		<!-- Le paramétre 1 recoit le montant à retrancher et le parametre 0 le id du client -->
+        <REQUETE>UPDATE Clients SET CreditAmount = CreditAmount - {1} WHERE ID = {0}</REQUETE>
+    </SQL>
+
+	<SQL id="AddFilmsClients">
+		<!--Le paramétre 0 est le id du client le parametre 1 est le id du films -->
+        <REQUETE>INSERT INTO FilmsClients VALUES ({0},{1})</REQUETE>
+    </SQL>
+    
+    <SQL id="Authentification">
+		<REQUETE>SELECT COUNT (*) FROM CLIENTS WHERE COURRIEL like '{0}' AND MOTDEPASSE like '{1}'</REQUETE>
+    </SQL>
+    
+</QUERIES>

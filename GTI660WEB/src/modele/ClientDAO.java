@@ -1,22 +1,58 @@
 package modele;
 
+import dbh.QueriesParser;
+
 public class ClientDAO {
 
 	private Client beanClient ;
+	private DBConnection myConnection ;
 	private boolean isAuth = false;
+	private QueriesParser qp ;
 
-	public ClientDAO (){
+
+	public ClientDAO (String xml){
 		this.beanClient = new Client () ;
+		
+        qp= new QueriesParser(xml);
+		
+		
+		
 		
 	}
 
-	public boolean login(String Courriel, String Password) {
+	public boolean login(String Courriel, String Password,DBConnection myConnectionr) {
+		this.myConnection = myConnectionr ;
 		
-		if(true){//TODO Faire un select dans la bd pour vérifier les infos clients
+	
+		myConnection.getConnect().send(qp.requeteAuthentification(Courriel, Password));
+		String connecRes = myConnection.getConnect().getOutput().trim();
+		int test = Integer.valueOf(connecRes);
+		
+		
+		if(test==1){//TODO Faire un select dans la bd pour vérifier les infos clients
+			
+			
+			myConnection.getConnect().setOutput("");
+			myConnection.getConnect().send(qp.requeteGetClient(Courriel));
+			
+		
+			beanClient.setId(Integer.valueOf(myConnection.getConnect().getResult().getObjectAt(0, 0).toString())) ;
+			beanClient.setNomFamille(myConnection.getConnect().getResult().getObjectAt(0, 1).toString()) ;
+			beanClient.setPrenom(myConnection.getConnect().getResult().getObjectAt(0, 2).toString()) ;
+			beanClient.setCourriel(myConnection.getConnect().getResult().getObjectAt(0, 3).toString()) ;
+			beanClient.setTel(myConnection.getConnect().getResult().getObjectAt(0, 4).toString()) ;
+			beanClient.setAnniv(myConnection.getConnect().getResult().getObjectAt(0, 5).toString().substring(0, 10)) ;
+			beanClient.setAdresse(myConnection.getConnect().getResult().getObjectAt(0, 6).toString()) ;
+			beanClient.setVille(myConnection.getConnect().getResult().getObjectAt(0, 7).toString()) ;
+			beanClient.setProvince(myConnection.getConnect().getResult().getObjectAt(0, 8).toString()) ;
+			beanClient.setCodePostal(myConnection.getConnect().getResult().getObjectAt(0, 9).toString()) ;
+			beanClient.setForfaitID(myConnection.getConnect().getResult().getObjectAt(0, 10).toString()) ;
+			beanClient.setMotDePasse(myConnection.getConnect().getResult().getObjectAt(0, 11).toString()) ;
+			beanClient.setCreditID(Integer.valueOf(myConnection.getConnect().getResult().getObjectAt(0, 12).toString())) ;
+		
+			
 			//TODO POPULER LE BEAN CLIENT A PARTIR DE LA BD SI LE LOGIN EST RÉUSSI
-			beanClient.setCourriel(Courriel);
-			beanClient.setMotDePasse(Password);
-			beanClient.setNomFamille("Populé de la db avec login reussi");
+			
 			isAuth = true;
 			return isAuth;} 
 
@@ -72,23 +108,25 @@ public class ClientDAO {
 	public boolean updateClient(String nom, String prenom, String emailsignup,
 			String tel, String adresse, String ville, String prov, String cc,
 			String anniv, String passwordsignup, String cp) {
-		if(true/**InsertBD**/){
+		
+		if(myConnection.getConnect().sendUpdate(qp.requeteUpdateClientProfile( String.valueOf(beanClient.getId()), nom, prenom, emailsignup, 
+				tel, adresse, ville,prov, cp, passwordsignup))){
+			
 			beanClient.setNomFamille(nom);
 			beanClient.setPrenom(prenom);
 			beanClient.setCourriel(emailsignup);
 			beanClient.setTel(tel);
 			beanClient.setAdresse(adresse);
 			beanClient.setVille(ville);
-			beanClient.setProvince(prov);
-			beanClient.setCreditID(/**viens de la BD.*/-1);
+			beanClient.setProvince(prov);		
 			beanClient.setAnniv(anniv);
 			beanClient.setMotDePasse(passwordsignup);
 			beanClient.setCodePostal(cp);
 			
+			return true;
 		}
-		// TODO UPDATE DANS LA BD
-		//RETURNS TRU SI RÉUSSI
-		return true;
+		
+		else return false ;
 	}
 
 }

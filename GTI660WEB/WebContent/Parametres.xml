@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<QUERIES>
+
+    	<SQL id="GetFilms">
+        	<TITRE>Titre</TITRE>
+        	<ANNEE>Annee</ANNEE>
+        	<LANGUE>Langue</LANGUE>
+ 			<DUREEMIN>Duree minimale</DUREEMIN>
+ 			<DUREEMAX>Duree maximale</DUREEMAX>   	
+    	</SQL>
+
+    	<SQL id="GetContributions">
+        		<NOM>Nom</NOM>
+        		<JOBS>
+        			<JOB>
+        				<JOBID>1</JOBID>
+        				<JOBDESCRIPTION>Acteur</JOBDESCRIPTION> 
+        			</JOB>
+        			<JOB>
+        				<JOBID>2</JOBID>
+        				<JOBDESCRIPTION>Realisateur</JOBDESCRIPTION> 
+        			</JOB>
+        			<JOB>
+        				<JOBID>3</JOBID>
+        				<JOBDESCRIPTION>Scenariste</JOBDESCRIPTION> 
+        			</JOB>
+        		</JOBS>        		
+    	</SQL>
+
+    	<SQL id="GetFilmsByGenre">
+    		<NOM>Nom</NOM>
+    		<GENRES>
+    			<GENRE>
+    				<ID>714</ID>
+    				<DESCRIPTION>Action</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>603</ID>
+    				<DESCRIPTION>Adventure</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>632</ID>
+    				<DESCRIPTION>Comedy</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>967</ID>
+    				<DESCRIPTION>Family</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>41</ID>
+    				<DESCRIPTION>Romance</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>669</ID>
+    				<DESCRIPTION>Drama</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>740</ID>
+    				<DESCRIPTION>Animation</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>758</ID>
+    				<DESCRIPTION>Fantasy</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>339</ID>
+    				<DESCRIPTION>Biography</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>320</ID>
+    				<DESCRIPTION>Thriller</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>989</ID>
+    				<DESCRIPTION>Sci-Fi</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>716</ID>
+    				<DESCRIPTION>Crime</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>834</ID>
+    				<DESCRIPTION>Sport</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>353</ID>
+    				<DESCRIPTION>Horror</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>506</ID>
+    				<DESCRIPTION>Film-Noir</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>478</ID>
+    				<DESCRIPTION>Mystery</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>471</ID>
+    				<DESCRIPTION>Western</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>459</ID>
+    				<DESCRIPTION>War</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>706</ID>
+    				<DESCRIPTION>Musical</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>46</ID>
+    				<DESCRIPTION>Documentary</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>821</ID>
+    				<DESCRIPTION>History</DESCRIPTION>
+    			</GENRE>
+    			<GENRE>
+    				<ID>719</ID>
+    				<DESCRIPTION>Music</DESCRIPTION>
+    			</GENRE>
+    		</GENRES>   	
+    	</SQL>
+
+	<SQL id="Authentification">
+		<USERNAME>Courriel</USERNAME>
+		<PASSWORD>Mot de passe</PASSWORD>
+    </SQL>
+
+
+</QUERIES>

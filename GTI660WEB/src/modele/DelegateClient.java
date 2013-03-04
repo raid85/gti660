@@ -16,12 +16,12 @@ public class DelegateClient {
 	private ClientDAO clientDAO ;
 	
 	
-	public DelegateClient (){
-		this.clientDAO = new ClientDAO () ;
+	public DelegateClient (String xml){
+		this.clientDAO = new ClientDAO (xml) ;
 	}
 
-	public boolean login(String Courriel, String Password) {
-		return clientDAO.login(Courriel, Password);
+	public boolean login(String Courriel, String Password, DBConnection myConnection) {
+		return clientDAO.login(Courriel, Password,myConnection);
 		
 	}
 	
