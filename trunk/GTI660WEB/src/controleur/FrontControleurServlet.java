@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Redirige afin de centraliser les requêtes
-		if(request.getParameterMap().size() < 1){
+		if(request.getParameterMap().size() < 1 && request.getSession().isNew()){
 			 ServletContext context = getServletContext();
 			    String path  = context.getRealPath("Queries.xml");
 			    request.getSession().setAttribute("xmlPath", path);

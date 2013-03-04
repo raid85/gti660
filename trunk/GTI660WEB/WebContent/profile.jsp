@@ -15,6 +15,7 @@ Released   : 20120325
 <%
 String [] infos = new String[10];
 infos = (String[])request.getSession().getAttribute("infosClient");
+
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
