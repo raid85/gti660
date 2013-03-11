@@ -47,14 +47,40 @@ Released   : 20120325
   </div>
   <!-- end #menu -->
 
+<div id="four-columns">
+		<div id="column1">
+			<h2>Search by "Motion"</h2>
+			<ul>
+						<li>							
+							<ul>
+								<li><a href="#">Camera Motion</a></li>
+								<li><a href="#">Motion Trajectory</a></li>
+								<li><a href="#">Parametric Motion</a></li>
+								<li><a href="#">Motion Activity</a></li>						
+							</ul>
+						</li>
+					</ul>
+			<p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie.</p>
+			<p><a href="#" class="link-style">Read More</a></p>
+		</div>
+		<div id="column2">
+			<h2>Search by "Color"</h2>
+			<p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie.</p>
+			<p><a href="#" class="link-style">Read More</a></p>
+		</div>
+		<div id="column3">
+			<h2>Search by "Shape"</h2>
+			<p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie.</p>
+			<p><a href="#" class="link-style">Read More</a></p>
+		</div>
+		<div id="column4">
+			<h2>Search by "Texture"</h2>
+			<p>Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Mauris quam enim, molestie.</p>
+			<p><a href="#" class="link-style">Read More</a></p>
+		</div>
+	</div>
 	
-  <div id="welcome">
-	  <h2 class="title"><a href="">Recherche</a></h2>
-	  <div class="entry">
-		  <p>Ceci est la page de recherche blablablahblala</p>
-	  </div>
-  </div>
-   
+	 
 
   <!-- end #page --> 
 <div id="footer">

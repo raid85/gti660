@@ -53,13 +53,7 @@ Released   : 20120325
   <!-- end #menu -->
 
 	
-  <div id="welcome">
-	  <h2 class="title"><a href="#">Bienvenue</a></h2>
-	  <div class="entry">
-		  <p>Ceci est <strong>ETS-MDB (ETS Movie database) </strong>, le portail web vers notre base de donnees multimedia, inscrivez vous!
-		   C'est gratuit ! :)</p>
-	  </div>
-  </div>
+  
    
   <div id="page">
                   <div id="container_demo" >
