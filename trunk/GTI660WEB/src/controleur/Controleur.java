@@ -29,11 +29,12 @@ public class Controleur {
 		if (request.getParameterMap().size() < 1 &&  request.getSession().isNew()){			 
 			DelegateClient clientDelegate = new DelegateClient ((String)request.getSession().getAttribute("xmlPath"));	
 			DBConnection myConnection = new DBConnection();		
+			
 			request.getSession().setAttribute("delegateClient",(DelegateClient) clientDelegate);
 			request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
 			request.getSession().setAttribute("dbUP", "true");
 			request.getSession().setAttribute("myConnection", (DBConnection)myConnection);
-			return "index.jsp";
+			return "search.jsp";
 		}
 		
 		else if (request.getSession().getAttribute("dbUP")=="true"){		
@@ -53,34 +54,34 @@ public class Controleur {
 			else return "erreur.jsp";
 		}
 
-		else if (request.getParameter("action").equals("register")){
-			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
-			if(myDel.createClient(request.getParameter("nom"),request.getParameter("prenom"),
-					request.getParameter("emailsignup"),request.getParameter("passwordsignup"))){
-				//On set le s infos  du nouveau clients dans la session si insert du DAO a réussi
-				request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
-				request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
-				return "profile.jsp";
-			}
-			else return "erreur.jsp" ;
-		}
-		else if (request.getParameter("action").equals("modifyProfile")){				
-			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
-			myDel.modifyClient(request.getParameter("nom"),
-					request.getParameter("prenom"),
-					request.getParameter("emailsignup"),
-					request.getParameter("tel"),
-					request.getParameter("adresse"),
-					request.getParameter("ville"),
-					request.getParameter("prov"),
-					request.getParameter("cp"),
-					request.getParameter("cc"),
-					request.getParameter("anniv"),
-					request.getParameter("passwordsignup"));
-			request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
-			request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
-			return "profile.jsp"; 
-		}
+//		else if (request.getParameter("action").equals("register")){
+//			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
+//			if(myDel.createClient(request.getParameter("nom"),request.getParameter("prenom"),
+//					request.getParameter("emailsignup"),request.getParameter("passwordsignup"))){
+//				//On set le s infos  du nouveau clients dans la session si insert du DAO a réussi
+//				request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
+//				request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
+//				return "profile.jsp";
+//			}
+//			else return "erreur.jsp" ;
+//		}
+//		else if (request.getParameter("action").equals("modifyProfile")){				
+//			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
+//			myDel.modifyClient(request.getParameter("nom"),
+//					request.getParameter("prenom"),
+//					request.getParameter("emailsignup"),
+//					request.getParameter("tel"),
+//					request.getParameter("adresse"),
+//					request.getParameter("ville"),
+//					request.getParameter("prov"),
+//					request.getParameter("cp"),
+//					request.getParameter("cc"),
+//					request.getParameter("anniv"),
+//					request.getParameter("passwordsignup"));
+//			request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
+//			request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
+//			return "profile.jsp"; 
+//		}
 
 		else if (request.getParameter("action").equals("signout")){	
 			return "signout.jsp";
