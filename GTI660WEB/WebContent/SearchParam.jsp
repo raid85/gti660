@@ -24,6 +24,7 @@ Released   : 20120325
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="jquery/jquery.gallerax-0.2.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
 <style type="text/css">
 @import "gallery.css";
 </style>
@@ -34,6 +35,8 @@ Released   : 20120325
      			<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
                <%=request.getSession().getAttribute("searchType") %>
                
+
+               <input class="color">
                  
                  
                   <%}%>
