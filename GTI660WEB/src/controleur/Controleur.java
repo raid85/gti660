@@ -27,17 +27,21 @@ public class Controleur {
 	public String executerTraitement(HttpServletRequest request, HttpServletResponse response){				
 
 		if (request.getParameterMap().size() < 1 &&  request.getSession().isNew()){			 
+			
 			DelegateClient clientDelegate = new DelegateClient ((String)request.getSession().getAttribute("xmlPath"));	
-			DBConnection myConnection = new DBConnection();		
+			
+			DBConnection myConnection = new DBConnection();	
+			if(myConnection.isUp())request.getSession().setAttribute("dbUP", "true");			
+			else request.getSession().setAttribute("dbUP", "false");
 			
 			request.getSession().setAttribute("delegateClient",(DelegateClient) clientDelegate);
 			request.getSession().setAttribute("infosConnection",(String[])myConnection.infosConnection());
-			request.getSession().setAttribute("dbUP", "true");
+			
 			request.getSession().setAttribute("myConnection", (DBConnection)myConnection);
 			return "search.jsp";
 		}
 		
-		else if (request.getSession().getAttribute("dbUP")=="true"){		
+		else if (true /**request.getSession().getAttribute("dbUP")=="true"**/){		
 
 			
 		if (request.getParameter("action").equals("login")){
@@ -54,17 +58,6 @@ public class Controleur {
 			else return "erreur.jsp";
 		}
 
-//		else if (request.getParameter("action").equals("register")){
-//			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
-//			if(myDel.createClient(request.getParameter("nom"),request.getParameter("prenom"),
-//					request.getParameter("emailsignup"),request.getParameter("passwordsignup"))){
-//				//On set le s infos  du nouveau clients dans la session si insert du DAO a réussi
-//				request.getSession().setAttribute("delegateClient",(DelegateClient) myDel);
-//				request.getSession().setAttribute("infosClient",(String[])myDel.getClientInfos());
-//				return "profile.jsp";
-//			}
-//			else return "erreur.jsp" ;
-//		}
 //		else if (request.getParameter("action").equals("modifyProfile")){				
 //			DelegateClient myDel = (DelegateClient)(request.getSession().getAttribute("delegateClient"));
 //			myDel.modifyClient(request.getParameter("nom"),
