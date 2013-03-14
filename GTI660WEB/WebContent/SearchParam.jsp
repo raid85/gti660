@@ -36,7 +36,7 @@ Released   : 20120325
                <%=request.getSession().getAttribute("searchType") %>
                
 
-               <input class="color">
+               <label>Choose youre color here</label><input class="color">
                  
                  
                   <%}%>
