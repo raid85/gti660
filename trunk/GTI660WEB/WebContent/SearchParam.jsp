@@ -17,11 +17,12 @@ Released   : 20120325
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Abel"
+	rel="stylesheet" type="text/css" />
 <link href="style1.css" rel="stylesheet" type="text/css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="jquery/jquery.gallerax-0.2.js"></script>
 <script type="text/javascript" src="jscolor/jscolor.js"></script>
@@ -30,19 +31,19 @@ Released   : 20120325
 </style>
 </head>
 <body>
-  <div id="page">
-     			
-     			<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
-               <%=request.getSession().getAttribute("searchType") %>
-               
+	<div id="page">
 
-               <label>Choose youre color here</label><input class="color">
-                 
-                 
-                  <%}%>
+		<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
 	
-	        </div> 
-  
+
+        <div id="colorWrap">
+		Click here: <input class="color" value="66ff00"> 
+		<input class="button" type="submit" value="Suivant" /> 
+		<input type="hidden" name="action" id="action" value="showParams" />
+		<%}%>
+			</div>
+	</div>
+
 
 </body>
 </html>

@@ -144,6 +144,16 @@ a:hover {
 }
 
 /* Search */
+#colorWrap {
+	
+	overflow: hidden;
+	width: 100%;
+	padding: 30px 0px;
+	border-bottom: 1px solid #292929;
+	margin-left : 50%;
+	margin-right : 50%;
+}
+
 
 #search {
 	float: right;
