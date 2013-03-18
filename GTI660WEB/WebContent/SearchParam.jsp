@@ -31,19 +31,20 @@ Released   : 20120325
 </style>
 </head>
 <body>
+<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
+	
 	<div id="page2">
 
-		<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
-	
+		
 
         <div id="colorWrap">
 		Click here: <input class="color" value="66ff00"> 
 		<input class="button" type="submit" value="Suivant" /> 
 		<input type="hidden" name="action" id="action" value="showParams" />
-		<%}%>
+	
 			</div>
 	</div>
-
+	<%}%>
 
 </body>
 </html>
