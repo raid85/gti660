@@ -70,7 +70,7 @@ Released   : 20120325
       							<labelDis >Color space</labelDis>
       							<br>	
       							<br>								
-								<input type="radio" id="radiobutton" name="colorButton" />
+								<input type="radio" id="radiobutton" name="radiobutton" value="color" />
       							<label>Dominant color(s)</label>
 								<br>	
 								<br>									
@@ -95,7 +95,7 @@ Released   : 20120325
       							<labelDis>Region-Based Shape Descriptor</labelDis>
 								<br>	
 								<br>									
-								<input type="radio" id="radiobutton" name="shapeButton"/>
+								<input type="radio" id="radiobutton" name="radiobutton" value="shape"/>
       							<label>Contour-Based Shape Descriptor</label>			
 		</div>
 		<div id="column4">
@@ -121,10 +121,14 @@ Released   : 20120325
 			
 		</form>	
 	</div>		
-	 
+
+	
   </div>
-  
-  <jsp:include page="SearchParam.jsp" />
+   	
+	<jsp:include page="SearchParam.jsp"/> 
+ 
+	<jsp:include page="SearchResults.jsp"/> 
+
 
 
   <!-- end #page --> 

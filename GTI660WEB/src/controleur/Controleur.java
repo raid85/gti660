@@ -40,14 +40,19 @@ public class Controleur {
 			if(request.getParameter("action").equals("showParams")){
 
 				String searchType = null;
-				if( request.getParameter("test_radio_group")!= null && request.getParameter("test_radio_group").toString().equals("color")){
+				if( request.getParameter("radiobutton")!= null && request.getParameter("radiobutton").toString().equals("color")){
 					searchType = "color";
 				}
-				else if (request.getParameter("test_radio_group")!= null && request.getParameter("test_radio_group").toString().equals("shape")){ 
+				else if (request.getParameter("radiobutton")!= null && request.getParameter("radiobutton").toString().equals("shape")){ 
 					searchType = "shape";
 					}
 				request.getSession().setAttribute("searchType", searchType);	
-				System.out.println("Search type"+searchType);
+			
+				return "search.jsp";
+			}
+			else if(request.getParameter("action").equals("showResults")){
+				request.setAttribute("searchResult", true);
+				System.err.println(request.getParameter("colorValue"));
 				return "search.jsp";
 			}
 

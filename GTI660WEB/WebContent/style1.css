@@ -239,19 +239,15 @@ a:hover {
 }
 
 /* Page */
-#page2 {
-	width: 80%;
-	margin: 0 auto;
-	margin-bottom: 10px;
-	margin-top: 10px ;
-	padding: 0;
-}
+
 #page {
 	width: 80%;
 	margin: 0 auto;
-	margin-bottom: 10px;
+	margin-bottom : 0px ;
 	margin-top: 10px ;
-	padding: 0;
+	padding: 0px 0px 50px 0px;
+	border-bottom: 1px solid #292929;
+	
 }
 #page h2 {
 	color: #FF7637;
@@ -334,9 +330,13 @@ a:hover {
 
 #sidebar {
 	float: left;
-	width: 280px;
-	padding: 30px 0px 0px 0px;
+	width: 60%;
+
 	color: #787878;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px ;
+	padding: 0;
 }
 
 #sidebar ul {
@@ -378,10 +378,9 @@ a:hover {
 }
 
 #sidebar h2 {
-	padding: 0px 0px 30px 0px;
-	letter-spacing: -.5px;
-	font-size: 1.8em;
-	color: #FFFFFF;
+	color: #FF7637;
+	padding: 0px 0px 20px 0px;
+	font-size: 36px;
 }
 
 #sidebar p {
@@ -428,7 +427,7 @@ a:hover {
 	height: 50px;
 	margin: 0 auto;
 	padding: 0px 0 15px 0;
-	border-top: 1px solid #292929;
+	
 }
 
 #footer p {
@@ -476,13 +475,13 @@ a:hover {
 	overflow: hidden;
 	margin-bottom: 0 auto;
 	width: 100%;
-	padding: 10px 0px;
-	border-bottom: 1px solid #292929;
+	padding: 0px 0px;
+	
 }
 
 #four-columns label {
 	
-	padding: 6px 5px 2px 5px;
+	padding: 0px 0px 0px 0px;
 	border: none;	
 	font: normal 15px Arial, Helvetica, sans-serif;	
 	text-decoration: none;
@@ -491,7 +490,7 @@ a:hover {
 
 #four-columns labelDis {
 	
-	padding: 6px 5px 2px 5px;
+	padding: 0px 0px 0px 0px ;
 	border: none;	
 	font: normal 15px Arial, Helvetica, sans-serif;	
 	text-decoration: none;
@@ -509,6 +508,8 @@ a:hover {
 #four-columns #column1 {
 	float: left;
 	width: 25%;
+
+	
 	
 }
 

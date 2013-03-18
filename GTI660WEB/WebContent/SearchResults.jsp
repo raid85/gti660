@@ -20,7 +20,6 @@ Released   : 20120325
 <link href="http://fonts.googleapis.com/css?family=Abel"
 	rel="stylesheet" type="text/css" />
 <link href="style1.css" rel="stylesheet" type="text/css" media="screen" />
-
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
@@ -31,26 +30,28 @@ Released   : 20120325
 </style>
 </head>
 <body>
-<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
+<%	if(request.getAttribute("searchResult")!= null ){%>
 	
 	<div id="page">
-
-        <div id="colorWrap">
-        <form action="./" method="post">	
-		<h2>Choose your color :</h2><input class="color" value="66ff00" name="colorValue"></input>
-		<input class="button" type="submit" value="Suivant" /> 
-		<input type="hidden" name="action" id="action" value="showResults" />
-		</form>
-	
 		
-			</div>
+				
+						
+							<h2>Results :</h2>
+							<ul>
+								<li><a href="#">Aliquam libero</a></li>
+								<li><a href="#">Consectetuer adipiscing elit</a></li>
+								<li><a href="#">Metus aliquam pellentesque</a></li>
+								<li><a href="#">Suspendisse iaculis mauris</a></li>
+								<li><a href="#">Urnanet non molestie semper</a></li>
+								<li><a href="#">Proin gravida orci porttitor</a></li>
+							</ul>
+						
+					
+					
 			
-			
+				
+		
 	</div>
-		
-
- 
-
 	<%}%>
 
 </body>
