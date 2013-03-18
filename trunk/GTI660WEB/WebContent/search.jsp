@@ -44,7 +44,7 @@ Released   : 20120325
   </div>
   <!-- end #menu -->
  <div id="page">
-<h2>Type de recherche (Descripteur MPEG7)</a></h2>
+
 <div id="four-columns">
 <form form  action="./" autocomplete="on" method="post">	
 		<div id="column1">
@@ -111,8 +111,9 @@ Released   : 20120325
 								<input type="radio" id="radiobutton" name="radiobutton" disabled />
       							<labelDis> Edge Histogram</labelDis>
       							<br>
+      											<br>
+				<br>				
 				<br>
-				
 				<br>
 		</div>                           
 				
@@ -127,7 +128,7 @@ Released   : 20120325
    	
 	<jsp:include page="SearchParam.jsp"/> 
  
-	<jsp:include page="SearchResults.jsp"/> 
+	 
 
 
 
