@@ -40,10 +40,10 @@ public class Controleur {
 			if(request.getParameter("action").equals("showParams")){
 
 				String searchType = null;
-				if( request.getParameter("colorButton")!= null && request.getParameter("colorButton").toString().equals("on")){
+				if( request.getParameter("test_radio_group")!= null && request.getParameter("test_radio_group").toString().equals("color")){
 					searchType = "color";
 				}
-				else if (request.getParameter("shapeButton")!= null && request.getParameter("shapeButton").toString().equals("on")){ 
+				else if (request.getParameter("test_radio_group")!= null && request.getParameter("test_radio_group").toString().equals("shape")){ 
 					searchType = "shape";
 					}
 				request.getSession().setAttribute("searchType", searchType);	
