@@ -31,18 +31,24 @@ Released   : 20120325
 </style>
 </head>
 <body>
-	<div id="page">
-
-		<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
-	
-
-        <div id="colorWrap">
-		Click here: <input class="color" value="66ff00"> 
-		<input class="button" type="submit" value="Suivant" /> 
-		<input type="hidden" name="action" id="action" value="showParams" />
-		<%}%>
+<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
+	<div id="page">	
+		<div id="four-columns">
+		<div id="column1">
+		<form form  action="./" autocomplete="on" method="post">	
+       
+		Click here to choose :<input class="color" value="66ff00"> 
+		<input class="button" type="submit" value="Suivant" margin-top="0px" /> 
+		<input type="hidden" name="action" id="action" value="searchColor" />
+			
+			
+			
+			</form>
+			</div>			
+		</div>
 			</div>
-	</div>
+			<%}%>
+	
 
 
 </body>
