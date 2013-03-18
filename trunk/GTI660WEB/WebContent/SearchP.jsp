@@ -20,7 +20,6 @@ Released   : 20120325
 <link href="http://fonts.googleapis.com/css?family=Abel"
 	rel="stylesheet" type="text/css" />
 <link href="style1.css" rel="stylesheet" type="text/css" media="screen" />
-
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
@@ -31,25 +30,20 @@ Released   : 20120325
 </style>
 </head>
 <body>
-
-<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
-<div id="page">
-    <div id="two-columns">
-     <div id="column1">  
-	<jsp:include page="SearchP.jsp"/> 
-	</div>   
-	 <div id="column2">  
-  		<jsp:include page="SearchResults.jsp"/> 
-   
-		</div>	
-       
-			
-	</div>		
-	</div>
+	
+<%	if(true ){%>
+	<div id="page2">
+	<div id="colorWrap">
+    
+        <form action="./" method="post">	
+		<h2>Choose your color :</h2><input class="color" value="000000" name="colorValue"></input>
+		<input class="button" type="submit" value="Suivant" /> 
+		<input type="hidden" name="action" id="action" value="showResults" />
+		</form>
+	
 		
-
- 
-
+	  </div>
+	   </div>
 	<%}%>
 
 </body>
