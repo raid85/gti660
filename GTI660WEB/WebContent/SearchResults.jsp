@@ -32,7 +32,7 @@ Released   : 20120325
 <body>
 <%	if(request.getAttribute("searchResult")!= null ){%>
 	
-	<div id="page">
+	<div id="page2">
 		
 				
 						

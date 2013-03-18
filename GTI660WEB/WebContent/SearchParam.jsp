@@ -34,16 +34,23 @@ Released   : 20120325
 <%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
 	
 	<div id="page">
-
-        <div id="colorWrap">
+	<div id="two-columns">
+	<div id="column1">
+	 <div id="colorWrap">
         <form action="./" method="post">	
-		<h2>Choose your color :</h2><input class="color" value="66ff00" name="colorValue"></input>
+		<h2>Choose your color :</h2><input class="color" value="000000" name="colorValue"></input>
 		<input class="button" type="submit" value="Suivant" /> 
 		<input type="hidden" name="action" id="action" value="showResults" />
 		</form>
 	
 		
 			</div>
+	</div>
+	<div id="column2">
+	<jsp:include page="SearchResults.jsp"/>
+	</div>
+	</div>
+       
 			
 			
 	</div>
