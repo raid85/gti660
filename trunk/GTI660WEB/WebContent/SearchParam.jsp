@@ -20,7 +20,7 @@ Released   : 20120325
 <link href="http://fonts.googleapis.com/css?family=Abel"
 	rel="stylesheet" type="text/css" />
 <link href="style1.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="css/demo.css" />
+
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
 <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
@@ -31,24 +31,18 @@ Released   : 20120325
 </style>
 </head>
 <body>
-<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
-	<div id="page">	
-		<div id="four-columns">
-		<div id="column1">
-		<form form  action="./" autocomplete="on" method="post">	
-       
-		Click here to choose :<input class="color" value="66ff00"> 
-		<input class="button" type="submit" value="Suivant" margin-top="0px" /> 
-		<input type="hidden" name="action" id="action" value="searchColor" />
-			
-			
-			
-			</form>
-			</div>			
-		</div>
-			</div>
-			<%}%>
+	<div id="page2">
+
+		<%	if(request.getSession().getAttribute("searchType")!= null && request.getSession().getAttribute("searchType").equals("color") ){%>
 	
+
+        <div id="colorWrap">
+		Click here: <input class="color" value="66ff00"> 
+		<input class="button" type="submit" value="Suivant" /> 
+		<input type="hidden" name="action" id="action" value="showParams" />
+		<%}%>
+			</div>
+	</div>
 
 
 </body>

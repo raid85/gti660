@@ -46,7 +46,7 @@ Released   : 20120325
  <div id="page">
 <h2>Type de recherche (Descripteur MPEG7)</a></h2>
 <div id="four-columns">
-<form  action="./" autocomplete="on" method="post">	
+<form form  action="./" autocomplete="on" method="post">	
 		<div id="column1">
 			<h2>Search by "Motion"</h2>
 								<input type="radio" id="radiobutton" name="radiobutton" disabled/>
@@ -70,7 +70,7 @@ Released   : 20120325
       							<labelDis >Color space</labelDis>
       							<br>	
       							<br>								
-								<input type="radio" value="color" name="test_radio_group"/>
+								<input type="radio" id="radiobutton" name="colorButton" />
       							<label>Dominant color(s)</label>
 								<br>	
 								<br>									
@@ -95,7 +95,7 @@ Released   : 20120325
       							<labelDis>Region-Based Shape Descriptor</labelDis>
 								<br>	
 								<br>									
-								<input type="radio" name="test_radio_group" value = "shape"/>
+								<input type="radio" id="radiobutton" name="shapeButton"/>
       							<label>Contour-Based Shape Descriptor</label>			
 		</div>
 		<div id="column4">
@@ -110,6 +110,10 @@ Released   : 20120325
 								<br>									
 								<input type="radio" id="radiobutton" name="radiobutton" disabled />
       							<labelDis> Edge Histogram</labelDis>
+      							<br>
+				<br>
+				
+				<br>
 		</div>                           
 				
 		<input class="button" type="submit" value="Suivant"/> 
@@ -118,10 +122,9 @@ Released   : 20120325
 		</form>	
 	</div>		
 	 
-	 <jsp:include page="SearchParam.jsp" />
   </div>
   
-  
+  <jsp:include page="SearchParam.jsp" />
 
 
   <!-- end #page --> 

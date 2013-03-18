@@ -6,7 +6,6 @@ Released for free under a Creative Commons Attribution 2.5 License
 */
 
 
-
 .button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
@@ -29,7 +28,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 	text-shadow:1px 1px 0px #cc9f52;
 	morgin-left :50% ;
 	morgin-right :50% ;
-	margin-top :0px auto ;
+	margin-top :150px auto;
 }.button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
 	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
@@ -98,7 +97,7 @@ a:hover {
 
 #header {
 	width: 80%;
-	height: 15px;
+	height: 150px;
 	margin: 0 auto;
 }
 
@@ -145,9 +144,55 @@ a:hover {
 }
 
 /* Search */
+#colorWrap {
+	
+	overflow: hidden;
+	width: 100%;
+
+		
+}
 
 
+#search {
+	float: right;
+	width: 280px;
+	height: 60px;
+	padding: 20px 0px 0px 0px;
+	background: #323435;
+	border-bottom: 4px solid #0974C4;
+}
 
+#search form {
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search-text {
+	width: 170px;
+	padding: 6px 5px 2px 5px;
+	border: none;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #464032;
+}
+
+#search-submit {
+	width: 50px;
+	height: 23px;
+	border: 1px solid #525252;
+	background: #525252;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFFFFF;
+}
 
 /* Menu */
 
@@ -194,13 +239,18 @@ a:hover {
 }
 
 /* Page */
-
-
+#page2 {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px ;
+	padding: 0;
+}
 #page {
 	width: 80%;
 	margin: 0 auto;
 	margin-bottom: 10px;
-	margin-top: 20px ;
+	margin-top: 10px ;
 	padding: 0;
 }
 #page h2 {
@@ -219,8 +269,8 @@ a:hover {
 /* Content */
 
 #content {
-	float: center;
-	width: 80%;
+	float: right;
+	width: 620px;
 	padding: 10px 0px 0px 0px;
 }
 
@@ -424,10 +474,10 @@ a:hover {
 }
 #four-columns {
 	overflow: hidden;
-	margin: 0 auto;
+	margin-bottom: 0 auto;
 	width: 100%;
-	padding: 30px 0px;
-
+	padding: 10px 0px;
+	border-bottom: 1px solid #292929;
 }
 
 #four-columns label {
