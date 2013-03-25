@@ -485,6 +485,29 @@ a:hover {
 	width: 300px;
 }
 
+#two-columns2 {
+	overflow: hidden;
+	margin-bottom: 0 auto;
+	width: 100%;
+	padding: 0px 0px;
+	
+}
+#two-columns2 h2 {
+	padding: 0px 0px 20px 0px;
+	font-size: 30px;
+	color: #FF7637;
+}
+#two-columns2 #column1 {
+	float: left;	
+	width: 69%;	
+
+}
+#two-columns2 #column2 {
+	float: right;
+	width: 29% ;
+
+	
+	}
 
 #two-columns {
 	overflow: hidden;
@@ -505,8 +528,8 @@ a:hover {
 }
 #two-columns #column2 {
 	float: right;
-	width: 54% ;	
-	border-left: 1px dotted #292929;
+	width: 54% ;
+
 	
 	}
 
