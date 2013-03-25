@@ -11,6 +11,8 @@ Released   : 20120325
 
 -->
 <%@ page language="java" contentType="text/html;charset=UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="keywords" content="" />
@@ -30,27 +32,31 @@ Released   : 20120325
 </style>
 </head>
 <body>
-<%	if(request.getAttribute("searchResult")!= null ){%>
-	
-	<div id="page2">
-		
-				
-						
-							<h2>Results :</h2>
+<%	if(request.getSession().getAttribute("searchResult")!= null ){%>
+	<div id="page">
+	<div id="two-columns2">
+	<div id="column1">	
+	<jsp:include page="player.jsp"/> 				
+				</div>	
+	<div id="column2">	
+	<%ArrayList<String> Results = ((ArrayList<String>)request.getSession().getAttribute("searchResult")); %>					
+						<h2>Search Results :</h2>
 							<ul>
-								<li><a href="#">Aliquam libero</a></li>
-								<li><a href="#">Consectetuer adipiscing elit</a></li>
-								<li><a href="#">Metus aliquam pellentesque</a></li>
-								<li><a href="#">Suspendisse iaculis mauris</a></li>
-								<li><a href="#">Urnanet non molestie semper</a></li>
-								<li><a href="#">Proin gravida orci porttitor</a></li>
-							</ul>
-						
+								 <% for (int i=0; i<Results.size();i++){%>               
+										
+						<li>
+							<%=Results.get(i).toString()%>
+						</li>
+						 <%}%>
+							</ul>	
 					
 					
 			
 				</div>	
-		
+
+				</div>	
+			
+		</div>
 	
 	<%}%>
 

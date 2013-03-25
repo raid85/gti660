@@ -31,12 +31,14 @@ Released   : 20120325
 </head>
 <body>
 	
-<%	if(true ){%>
+<%	if(request.getSession().getAttribute("searchType")!=null  && request.getSession().getAttribute("searchType").equals("color")){%>
 	<div id="page2">
 	<div id="colorWrap">
     
         <form action="./" method="post">	
 		<h2>Choose your color :</h2><input class="color" value="000000" name="colorValue"></input>
+		<br>
+		<br>
 		<input class="button" type="submit" value="Suivant" /> 
 		<input type="hidden" name="action" id="action" value="showResults" />
 		</form>

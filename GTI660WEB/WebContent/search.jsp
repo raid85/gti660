@@ -44,91 +44,51 @@ Released   : 20120325
   </div>
   <!-- end #menu -->
  <div id="page">
-
-<div id="four-columns">
-<form form  action="./" autocomplete="on" method="post">	
-		<div id="column1">
-			<h2>Search by "Motion"</h2>
-								<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Camera Motion</labelDis>
-      							<br>
-      							<br>								
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis>Motion Trajectory</labelDis>
-								<br>
-								<br>											
-								<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Parametric Motion</labelDis>
-								<br>
-								<br>			
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis>Motion Activity</labelDis>															
-		</div>
-		<div id="column2">
-			<h2>Search by "Color"</h2>	
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis >Color space</labelDis>
-      							<br>	
-      							<br>								
-								<input type="radio" id="radiobutton" name="radiobutton" value="color" />
-      							<label>Dominant color(s)</label>
-								<br>	
-								<br>									
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis>Color Histogram</labelDis>
-								<br>	
-								<br>	
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis>Color-Structure</labelDis>
-								<br>	
-								<br>	
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis>Histogram</labelDis>									
-		</div>
-		<div id="column3">
-			<h2>Search by "Shape"</h2>
-			<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Object Bounding Box</labelDis>
-      							<br>	
-      							<br>								
-								<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Region-Based Shape Descriptor</labelDis>
-								<br>	
-								<br>									
-								<input type="radio" id="radiobutton" name="radiobutton" value="shape"/>
-      							<label>Contour-Based Shape Descriptor</label>			
-		</div>
-		<div id="column4">
-			<h2>Search by "Texture"</h2>
-			<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Homogeneous Texture</labelDis>
-      							<br>	
-      							<br>								
-								<input type="radio" id="radiobutton" name="radiobutton" disabled/>
-      							<labelDis>Texture Browsing</labelDis>
-								<br>	
-								<br>									
-								<input type="radio" id="radiobutton" name="radiobutton" disabled />
-      							<labelDis> Edge Histogram</labelDis>
-      							<br>
-      											<br>
-				<br>				
-				<br>
-				<br>
-		</div>                           
-				
-		<input class="button" type="submit" value="Suivant"/> 
+    <div id="two-columns">
+     <div id="column1">  
+	 <form form  action="./" autocomplete="on" method="post">
+ <h2>Choose your search type :</h2>	
+  <select id="select_dd" name="select_dd">
+        <optgroup label="Search by Motion">
+          <option value="1">Camera Motion (Not available)</option>
+          <option value="2">Motion Trajectory (Not available)</option>
+          <option value="3">Parametric Motion (Not available)</option>
+          <option value="4">Motion Activity (Not available)</option>
+        </optgroup>
+        <optgroup label="Search by Color">
+          <option value="5">Color space (Not available)</option>
+          <option value="6">Dominant color(s)</option>
+          <option value="7">Color Histogram (Not available)</option>
+          <option value="8">Color-Structure (Not available)</option>
+        </optgroup>
+        <optgroup label="Search by Shape">
+          <option value="9">Object Bounding Box (Not available)</option>
+          <option value="10">Region-Based Shape Descriptor (Not available)</option>
+          <option value="11">Contour-Based Shape Descriptor </option>
+        
+        </optgroup>
+        <optgroup label="Search by Texture">
+          <option value="12">Homogeneous Texture (Not available)</option>
+          <option value="13">Texture Browsing (Not available)</option>
+          <option value="14">Edge Histogram (Not available)</option>
+         </optgroup>
+      </select>	                        
+	 <br>
+	 <br>	
+	 <input class="button" type="submit" value="Suivant"/> 
      <input type="hidden" name="action" id="action" value="showParams" />				
 			
 		</form>	
+	</div>   
+	 <div id="column2">  
+  		<jsp:include page="SearchP.jsp"/> 			
 	</div>		
+	</div> 
 
-	
-  </div>
-   	
-	<jsp:include page="SearchParam.jsp"/> 
- 
-	 
+   </div>
+
+	<jsp:include page="SearchResults.jsp"/> 
+			 
 
 
 
