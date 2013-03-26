@@ -31,9 +31,9 @@ Released   : 20120325
 @import "gallery.css";
 </style>
 </head>
-<body>
+<body style = "overflow: auto;" >
 <%	if(request.getSession().getAttribute("searchResult")!= null ){%>
-	<div id="page">
+	<div id="page" >
 	<div id="two-columns2">
 	<div id="column1">	
 	<jsp:include page="player.jsp"/> 				
