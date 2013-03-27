@@ -57,7 +57,7 @@ Released   : 20120325
         </optgroup>
         <optgroup label="Search by Color">
           <option value="5">Color space (Not available)</option>
-          <option value="6">Dominant color(s)</option>
+          <option selected="selected" value="6">Dominant color(s)</option>
           <option value="7">Color Histogram (Not available)</option>
           <option value="8">Color-Structure (Not available)</option>
         </optgroup>

@@ -53,21 +53,26 @@ public class Controleur {
 				return "search.jsp";
 			}
 			else if(request.getParameter("action").equals("showResults")){
-				FilmsDAO fdao = new FilmsDAO ((String)request.getSession().getAttribute("xmlPath"),(DBConnection)request.getSession().getAttribute("myConnection"));    
-				
+				FilmsDAO fdao = new FilmsDAO ((String)request.getSession().getAttribute("xmlPath"),(DBConnection)request.getSession().getAttribute("myConnection"));			
 				ArrayList<String> resultNameArray = new ArrayList<String> () ;
+				//On saisie la valeur du colorPicker
 				String colorHex = request.getParameter("colorValue") ;
-				fdao.getFilmsByDominantColor(colorHex);
-				System.out.println(colorHex);
 				
-//				Color myColor = hex2Rgb(colorHex);		
-//				float[] rgbvalue = new float[3] ;
-//				rgbvalue[0] = myColor.getRed();
-//				rgbvalue[1]=  myColor.getGreen();
-//				rgbvalue[2]=  myColor.getBlue() ;
-//				float[] cielab = new float[3] ;
-//				cielab=xyz2cielab(rgb2xyz(rgbvalue));
-
+				//Conditions pour recherche pas image ou recherche par vidéo
+				if(request.getParameter("trg")!=null && request.getParameter("trg").equals("vidS")){
+					
+					//On fait la requête vidéo
+					fdao.getFilmsByDominantColor(colorHex);
+					
+				}
+				else if(request.getParameter("trg")!=null && request.getParameter("trg").equals("imgS")){					
+					// Ici faire la requête images
+					
+				}			
+				
+				
+				
+				//Il faut remplir le tableau des noms avec les résultats obtenus ;
 				
 				for(int i=0; i<15;i++){
 					resultNameArray.add("Film caca "+i);
@@ -79,6 +84,16 @@ public class Controleur {
 				request.getSession().setAttribute("moviePath", "BandesA/317219.mov");
 				System.err.println();
 				return "search.jsp";
+			}
+			
+			else if (request.getParameter("action").equals("jouerVideo")){
+				
+				//Trouver le movie path avec le parametre video (envoyé dans la requête)
+				//request.getParameter("video");
+				request.getSession().setAttribute("moviePath", "BandesA/317219.mov");
+			
+				return "search.jsp";
+				
 			}
 
 		}

@@ -28,7 +28,6 @@ public class FilmsDAO {
 	public ArrayList<Film> getFilmsByDominantColor(String hexColor){
 		
 		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));
-
 		
 		ArrayList connecRes = myConnection.getConnect().getResult().getArrayList();
 		for(int i=0 ; i<connecRes.size();i++){
