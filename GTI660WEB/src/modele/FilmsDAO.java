@@ -6,53 +6,38 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.sun.org.apache.regexp.internal.recompile;
 
+import dbh.QueriesParser;
+
 public class FilmsDAO {
-	private static String driver = "org.sqlite.JDBC";
-	private static String url = "jdbc:sqlite:C:/Users/bruce/workspace/GTI525LAB2/Data/GTI525";
-	private static ResultSet rs;
-	
-	private static ResultSet executeQuerry(String requete) throws ClassNotFoundException, SQLException{
-		Class.forName(driver);
-		Connection conn = DriverManager.getConnection(url);
-		Statement stmt = conn.createStatement();
-		stmt.close();
-		return stmt.executeQuery(requete);	
+	private Film beanFilm ;
+	private DBConnection myConnection ;
+
+	private QueriesParser qp ;
+
+
+	public FilmsDAO (String xml, DBConnection myConn){
+		this.beanFilm = new Film () ;		
+		qp= new QueriesParser(xml);
+		this.myConnection = myConn;
 	}
+	
+	public ArrayList<Film> getFilmsByDominantColor(String hexColor){
 		
-	public static Film[] getFilms() throws ClassNotFoundException, SQLException{
-		rs = executeQuerry("SELECT COUNT(*) FROM Spectacle");
-		rs.next();
-		int rowCount = (Integer) rs.getObject(1);
-		rs = executeQuerry("SELECT Spectacle.ID_Spectacle, Spectacle.Nom, Spectacle.Description, Spectacle.Image FROM Spectacle");
-		Film[] tableauSpectacles = new Film[rowCount];
-		int i = 0;
-		while ( rs.next() ) {
-			Film spectacle = new Film();
-//            spectacle.setId((Integer) rs.getObject(1));
-//            spectacle.setNom((String) rs.getObject(2));
-//            spectacle.setDescription((String) rs.getObject(3));
-//            spectacle.setImage((String) rs.getObject(4));
-            tableauSpectacles[i] = spectacle;
-            i++;
+		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));
+		ArrayList connecRes = myConnection.getConnect().getResult().getArrayList();
+		for(int i=0 ; i<connecRes.size();i++){
+			System.out.println("FilmsDAO Results :"+connecRes.get(i));
 		}
-		return tableauSpectacles;
-	}
-	
-	public static int getNbBilletsDispo(int idRepresentation) throws ClassNotFoundException, SQLException{
-		rs = executeQuerry("SELECT BilletDispo FROM Representation WHERE ID_Rep = " + idRepresentation);
-		rs.next();
-		return (Integer) rs.getObject(1);
 		
-	}
-	
-	public static void getRep(int idRepresentation) throws ClassNotFoundException, SQLException{
+		
+		return null;
 		
 		
 	}
-	
-		
+
 }
-	
+

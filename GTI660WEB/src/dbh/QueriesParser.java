@@ -13,7 +13,8 @@ import org.w3c.dom.NodeList;
 public class QueriesParser {
 
 	String REQGetFilms, REQGetContributions, REQGetFilmsByGenre, REQGetClient, REQGetClientProfile, REQGetClientCreditInfo, REQGetFilmsClients,
-	REQUpdateClientProfile, REQUpdateClientCreditInfo, REQUpdateClientCreditAmount, REQAddFilmsClients, REQAuthentification;
+	REQUpdateClientProfile, REQUpdateClientCreditInfo, REQUpdateClientCreditAmount, REQAddFilmsClients, REQAuthentification,
+	REQGetImagesByDominantColor, REQGetVideoByDominantColor;
 
 	public QueriesParser(String xmlPath) {
 
@@ -85,7 +86,12 @@ public class QueriesParser {
 					if(eElement.getAttribute("id").equals("Authentification")){
 						REQAuthentification=eElement.getElementsByTagName("REQUETE").item(0).getTextContent();
 					}
-
+					if(eElement.getAttribute("id").equals("GetImagesByDominantColor")){
+						REQGetImagesByDominantColor=eElement.getElementsByTagName("REQUETE").item(0).getTextContent();
+					}
+					if(eElement.getAttribute("id").equals("GetVideoByDominantColor")){
+						REQGetVideoByDominantColor=eElement.getElementsByTagName("REQUETE").item(0).getTextContent();
+					}
 				}
 			}
 
@@ -192,5 +198,17 @@ public class QueriesParser {
 		s=s.replace("MOTDEPASSE", "UPPER(MOTDEPASSE)");
 		return s;
 	}
+	
+	public String GetImagesByDominantColor(String couleur){
+		String s=REQGetImagesByDominantColor;
+		s=s.replace("{0}",couleur.toUpperCase());
+		return s;
+	}
+	public String GetVideoByDominantColor(String couleur){
+		String s=REQGetVideoByDominantColor;
+		s=s.replace("{0}",couleur.toUpperCase());
+		return s;
+	}
+	
 
 }
