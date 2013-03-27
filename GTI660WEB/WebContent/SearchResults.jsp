@@ -45,7 +45,8 @@ Released   : 20120325
 								 <% for (int i=0; i<Results.size();i++){%>               
 										
 						<li>
-							<%=Results.get(i).toString()%>
+						<a href="./?action=jouerVideo&video=<%=Results.get(i).toString()%>"><%=Results.get(i).toString()%></a>
+							
 						</li>
 						 <%}%>
 							</ul>	

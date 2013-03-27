@@ -39,6 +39,19 @@ Released   : 20120325
 		<h2>Choose your color :</h2><input class="color" value="000000" name="colorValue"></input>
 		<br>
 		<br>
+		<p>
+      <input type="radio" id="imgS" name="trg" />
+      <label for="test_radio_1">
+       Search in images
+      </label>
+      &nbsp;
+      &nbsp;
+      <input type="radio" id="vidS" name="trg" checked />
+      <label for="test_radio_2">
+        Search in videos
+      </label>
+    
+    </p>
 		<input class="button" type="submit" value="Suivant" /> 
 		<input type="hidden" name="action" id="action" value="showResults" />
 		</form>
