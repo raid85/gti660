@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <QUERIES>
-   	<SQL id="GetFilms">
-   		<REQUETE>SELECT Films.id, Films.Titre, Films.Poster, Films.Duree, Films.Annee, Genres.Description FROM FILMS, LANGUES WHERE TITRE LIKE '%{0}%' AND ANNEE = {1}  AND (DUREE {3} AND DUREE {4}) AND (LANGUE.ID = {2} AND LANGUE.ID = LANGUESFILMS.LANGUEID AND LANGUESFILMS.FILMID = FILM.ID)</REQUETE>
+	<SQL id="GetFilms">
+		<REQUETE>SELECT Films.id, Films.Titre, Films.Poster,
+			Films.Duree, Films.Annee, Genres.Description FROM FILMS, LANGUES
+			WHERE TITRE LIKE '%{0}%' AND ANNEE = {1}  AND (DUREE {3} AND DUREE {4}) AND (LANGUE.ID = {2} AND LANGUE.ID = LANGUESFILMS.LANGUEID AND LANGUESFILMS.FILMID = FILM.ID)</REQUETE>
    	</SQL>
 
    	<SQL id="GetContributions">
@@ -58,4 +60,21 @@
 		<REQUETE>SELECT COUNT (*) FROM CLIENTS WHERE COURRIEL like '{0}' AND MOTDEPASSE like '{1}'</REQUETE>
     </SQL>
     
+    <SQL id= "GetImagesByDominantColor">
+    	<REQUETE>
+			Select * from (SELECT  films.id, films.titre, films.poster, films.bandeAnnonce, XMLtab.Couleur, XMLtab.Pourcentage 
+			FROM films, (XMLTABLE ('$d/Mpeg7/DominantColor' passing IMAGE_XML as "d" COLUMNS idFilm NUMBER PATH '@filmId',
+   			Couleur 	VARCHAR(20) 	PATH 'Value/Index', Pourcentage VARCHAR(25) PATH 'Value/Percentage')AS XMLTab)
+   			WHERE Couleur like '%{0}%');	
+   		</REQUETE>
+	</SQL>
+
+	<SQL id= "GetVideoByDominantColor">
+		<REQUETE>
+			Select * from (SELECT  films.id, films.titre, films.poster, films.bandeAnnonce, XMLtab.Couleur, XMLtab.Pourcentage 
+			FROM films, (XMLTABLE ('$d/Mpeg7/DominantColor' passing VIDEO_XML as "d" COLUMNS idFilm NUMBER PATH '@filmId',
+   			Couleur VARCHAR(20) PATH 'Value/Index', Pourcentage VARCHAR(25) PATH 'Value/Percentage')AS XMLTab)
+   			WHERE Couleur like '%{0}%');		
+ 		</REQUETE>
+	</SQL>    
 </QUERIES>

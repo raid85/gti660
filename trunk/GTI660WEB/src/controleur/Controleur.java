@@ -53,37 +53,25 @@ public class Controleur {
 				return "search.jsp";
 			}
 			else if(request.getParameter("action").equals("showResults")){
-
+				FilmsDAO fdao = new FilmsDAO ((String)request.getSession().getAttribute("xmlPath"),(DBConnection)request.getSession().getAttribute("myConnection"));    
+				
 				ArrayList<String> resultNameArray = new ArrayList<String> () ;
 				String colorHex = request.getParameter("colorValue") ;
+				fdao.getFilmsByDominantColor(colorHex);
 				System.out.println(colorHex);
-				Color myColor = hex2Rgb(colorHex);
+				
+//				Color myColor = hex2Rgb(colorHex);		
+//				float[] rgbvalue = new float[3] ;
+//				rgbvalue[0] = myColor.getRed();
+//				rgbvalue[1]=  myColor.getGreen();
+//				rgbvalue[2]=  myColor.getBlue() ;
+//				float[] cielab = new float[3] ;
+//				cielab=xyz2cielab(rgb2xyz(rgbvalue));
 
-				//				System.out.println("Red "+myColor.getRed());
-				//				System.out.println("Green "+myColor.getGreen());
-				//				System.out.println("Blue "+myColor.getBlue());		
-				//				float[] xyz = rgb2xyz(rgbvalue) ;
-				//				System.out.println("X "+xyz[0]);
-				//				System.out.println("Y "+xyz[1]);
-				//				System.out.println("Z "+xyz[2]);//
-				//				float[] labvalue= xyz2cielab(xyz) ;
-				//				System.out.println("L "+labvalue[0]);
-				//				System.out.println("A "+labvalue[1]);
-				//				System.out.println("B "+labvalue[2]);		
-
-				float[] rgbvalue = new float[3] ;
-				rgbvalue[0] = myColor.getRed();
-				rgbvalue[1]=  myColor.getGreen();
-				rgbvalue[2]=  myColor.getBlue() ;
-
-				float[] cielab = new float[3] ;
-
-				cielab=xyz2cielab(rgb2xyz(rgbvalue));
-
-				for(int i=0; i<2000;i++){
-					resultNameArray.add("Film caca1");
-					resultNameArray.add("Film caca2");
-					resultNameArray.add("Film caca3");	
+				
+				for(int i=0; i<15;i++){
+					resultNameArray.add("Film caca "+i);
+				
 				}
 							
 				request.getSession().setAttribute("searchResult", resultNameArray);
