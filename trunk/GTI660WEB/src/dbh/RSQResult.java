@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.sql.*; 
 
 /**
-* Class that define a result object that will be gathered 
-* from the database. This class  OracleResultSet 
-* which describe the result from a Oracle database
-*/ 
+ * Class that define a result object that will be gathered 
+ * from the database. This class  OracleResultSet 
+ * which describe the result from a Oracle database
+ */ 
 
 public class RSQResult 
 {
 	ResultSet rs = null; 
 	ResultSetMetaData rsmd = null;  	
-	
+
 	// ArrayList that store all the row and the column 
 	// dynamically. ArrayList contains a set of ArrayList 
 	// which represents each Column. Reference is stored 
@@ -23,7 +23,7 @@ public class RSQResult
 
 	int nbRows = 0; 
 	int nbCols = 0; 
-	
+
 	final int MAXNBROWS = 100; 
 	final int MAXNBCOLS = 50; 
 
@@ -51,11 +51,11 @@ public class RSQResult
 			rowList.add(i, colList); 	
 		} 
 	}		
-	
+
 	/**
-	* Constructor of a Result set with a Oracle set and a meta data set 
-	*
-	*/
+	 * Constructor of a Result set with a Oracle set and a meta data set 
+	 *
+	 */
 	public RSQResult(ResultSet rs, ResultSetMetaData rsmd) 
 	{ 
 		super(); 
@@ -64,42 +64,42 @@ public class RSQResult
 	}		
 
 	/**
-	* Function that set the result set and the metadata
-	*
-	*/
+	 * Function that set the result set and the metadata
+	 *
+	 */
 	public void setResultSet(ResultSet rs, ResultSetMetaData rsmd) 
 	{ 
 		this.rs = rs; 	
 		this.rsmd = rsmd; 	
 	} 
-	
+
 	/**
-	* Function that return the ArrayList containing the  
-	* result. 
-	*/ 
+	 * Function that return the ArrayList containing the  
+	 * result. 
+	 */ 
 	public ArrayList getArrayList() 
 	{ 
 		return rowList; 
 	} 
 
 	/**
-	* Function that return the Object at row and col  
-	*  
-	*/ 
+	 * Function that return the Object at row and col  
+	 *  
+	 */ 
 	public Object getObjectAt(int row, int col) 
 	{ 
 		return (((ArrayList)rowList.get(row)).get(col))  ; 
 	} 
 
 	/**
-	* Function that return the ArrayList containing the  
-	* row. 
-	*/ 
+	 * Function that return the ArrayList containing the  
+	 * row. 
+	 */ 
 	public ArrayList getRowAt(int row) 
 	{ 
 		return ((ArrayList)rowList.get(row)); 
 	} 
-	
+
 
 	public int getRowCount() { 
 		return nbRows; 
@@ -111,9 +111,9 @@ public class RSQResult
 
 
 	/**
-	* Function that get the label for each column 
-	* . 
-	*/ 
+	 * Function that get the label for each column 
+	 * . 
+	 */ 
 	public Object getTitleAt(int i) 
 	{ 
 		return title.get(i); 
@@ -121,54 +121,54 @@ public class RSQResult
 
 
 	/**
-	* Function that expand the array if necessary 
-	* Column only
-	*/ 
+	 * Function that expand the array if necessary 
+	 * Column only
+	 */ 
 	private void expandArray() 
 	{ 
 		int temp = nbRows; 
 		nbRows = MAXNBROWS; 
-//		System.err.println("(RSQResult) Dans expand " + nbCols); 
-//		System.err.println("(RSQResult) Dans expand " + nbRows); 
+		//		System.err.println("(RSQResult) Dans expand " + nbCols); 
+		//		System.err.println("(RSQResult) Dans expand " + nbRows); 
 
 		if (nbCols > MAXNBCOLS) 
 		{ 				
-		// reallocate each col in rows 
-		title.clear(); 
-		for (int i=0; i < nbCols; i ++)
-		{ 
-			title.add(i, new String("")); 		
-		}
-
-		ArrayList tempCols = null; 
-		for (int i =0; i < MAXNBROWS; i ++)
-		{ 
-			tempCols = (ArrayList)rowList.get(i); 				
-			tempCols.clear(); 
-
-			for (int j=0; j < nbCols; j ++)
+			// reallocate each col in rows 
+			title.clear(); 
+			for (int i=0; i < nbCols; i ++)
 			{ 
-				tempCols.add(j, new String("")); 		
+				title.add(i, new String("")); 		
 			}
-			rowList.set(i, tempCols); 				
-		}				
-		reallocate = true; 
+
+			ArrayList tempCols = null; 
+			for (int i =0; i < MAXNBROWS; i ++)
+			{ 
+				tempCols = (ArrayList)rowList.get(i); 				
+				tempCols.clear(); 
+
+				for (int j=0; j < nbCols; j ++)
+				{ 
+					tempCols.add(j, new String("")); 		
+				}
+				rowList.set(i, tempCols); 				
+			}				
+			reallocate = true; 
 		}	 
 
 		nbRows = temp; 
-//		System.err.println("(RSQResult) fin expand " + nbRows); 
+		//		System.err.println("(RSQResult) fin expand " + nbRows); 
 	} 
 
 	/**
-	* Function that trim the array 
-	*
-	*/ 	
+	 * Function that trim the array 
+	 *
+	 */ 	
 	private void trimArray()  
 	{ 
 		int curRows = 0; 
 		int curCols = 0;
-	
-//		System.err.println("(RSQResult) Dans trim"); 
+
+		//		System.err.println("(RSQResult) Dans trim"); 
 		if (reallocate == true) 
 		{ 
 			if (rowList.size() > 0)
@@ -181,7 +181,7 @@ public class RSQResult
 				curRows = 0; 
 				curCols = 0; 
 			}	
-				
+
 			// Need to trim in Rows???
 			if (curRows > MAXNBROWS) 
 			{ 
@@ -193,7 +193,7 @@ public class RSQResult
 				};				
 				curRows = k; 
 			} 
-			
+
 			// Need to trim in Column ??
 			if (nbCols > MAXNBCOLS)
 			{ 
@@ -203,13 +203,13 @@ public class RSQResult
 					title.remove(title.get(k)); 
 					k = title.size(); 
 				};
-				
+
 				curCols = k; 
-				
+
 				for (int i =0; i < nbRows; i ++)
 				{ 
 					ArrayList colList = (ArrayList)rowList.get(i); 		
-					
+
 					k =nbCols; 
 					while (k >= (MAXNBCOLS))
 					{
@@ -221,12 +221,12 @@ public class RSQResult
 			reallocate = false; 		
 		}
 	} 
-	
-	
+
+
 	/**
-	* Function that extract the result and store it into an array
-	*
-	*/ 	
+	 * Function that extract the result and store it into an array
+	 *
+	 */ 	
 	public boolean extractResult() 
 	{ 				
 		// initialize output vector 
@@ -239,9 +239,9 @@ public class RSQResult
 		ArrayList colList = null; 
 
 		/**
-		* trim if necessary the array
-		*/
-/*		try
+		 * trim if necessary the array
+		 */
+		/*		try
 		{ 
 			trimArray(); 
 		}
@@ -261,10 +261,10 @@ public class RSQResult
 		try 
 		{
 			nbCols = rsmd.getColumnCount(); 		
-			
+
 			/**
-			* expand in Column if necessary the array
-			*/
+			 * expand in Column if necessary the array
+			 */
 			try
 			{
 				expandArray(); 
@@ -274,7 +274,7 @@ public class RSQResult
 				System.err.println("(RSQResult) Cannot expand Array: " + e.getMessage()); 
 				return false; 
 			}
-			
+
 			// print column title 
 			for (int i = 1; i <= nbCols; i ++) 
 			{
@@ -283,8 +283,7 @@ public class RSQResult
 			}
 
 			// starting to extract data
-			if (rs.next())	
-			{
+			if (rs.next())	{
 				if (row >= MAXNBROWS) 
 				{ 
 					colList = new ArrayList(nbCols); 
@@ -297,7 +296,7 @@ public class RSQResult
 				for (int i = 1; i <= nbCols; i ++) 
 				{
 					colList.set((i-1), rs.getObject(i)); 		
-    			}
+				}
 
 				if (row >= MAXNBROWS) 
 				{ 
@@ -309,11 +308,11 @@ public class RSQResult
 				}		
 				row++; 
 
-    			// for all the rows in the result set ...
+				// for all the rows in the result set ...
 				boolean isMaxRow = false; 
 
-    			while (rs.next())
-    			{ 
+				while (rs.next())
+				{ 
 					if (row >= MAXNBROWS) 
 					{ 
 						colList = new ArrayList(); 
@@ -327,40 +326,40 @@ public class RSQResult
 					colList.clear(); 
 					for (int i = 1; i <= nbCols; i ++) 
 					{
-    					colList.add((i-1), rs.getObject(i)); 		
-    				}				
+						colList.add((i-1), rs.getObject(i)); 		
+					}				
 
 					if (isMaxRow)
 						rowList.add(row, colList); 
-    				else 
+					else 
 						rowList.set(row, colList); 
 
 					row++; 
-    			}    			
+				}    			
 
 				if (row >= MAXNBROWS) 
 				{ 
 					reallocate = true;
 				}
 				nbRows = row; 
-    		}
-    		else 
-    		{ 	
-    			System.err.println("(RSQResult) Invalid result"); 																		
+			}
+			else 
+			{ 	
+				System.err.println("(RSQResult) Invalid result"); 																		
 				return false; 
 			}		
 		}catch (SQLException e) 
 		{ 
-    		System.err.println("(RSQResult) SQL error: " + e.getMessage()); 																			
+			System.err.println("(RSQResult) SQL error: " + e.getMessage()); 																			
 			return false; 
 		}
 
-//		System.err.println("row: " + row); 
-//		System.err.println("NbRows: " + nbRows); 
-//		System.err.println("NbCols: " + nbCols); 
-//
-//		System.err.println("NbRows: " + rowList.size()); 
-//		System.err.println("NbCols: " + ((ArrayList)rowList.get(0)).size()); 
+		//		System.err.println("row: " + row); 
+		//		System.err.println("NbRows: " + nbRows); 
+		//		System.err.println("NbCols: " + nbCols); 
+		//
+		//		System.err.println("NbRows: " + rowList.size()); 
+		//		System.err.println("NbCols: " + ((ArrayList)rowList.get(0)).size()); 
 		return true; 
 	}
 }
