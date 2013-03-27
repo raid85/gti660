@@ -130,6 +130,11 @@ public class RSQConnect
 				PreparedStatement pstmt = (PreparedStatement)dbConnect.prepareStatement(query);
 
 				rs = (ResultSet)pstmt.executeQuery();
+			
+					
+					System.out.println("HAHAHAHAH        "+rs.next());
+				
+				
 				rsmd = (ResultSetMetaData)rs.getMetaData();
 				result.setResultSet(rs, rsmd);
 
@@ -140,8 +145,8 @@ public class RSQConnect
 						output = output + "\t" + result.getTitleAt(i);
 					}
 
-					//					System.err.println(output);
-					//					System.err.println("=================================================================================");
+										System.err.println(output);
+									System.err.println("=================================================================================");
 					output = "";
 
 					for(int i =0; i < result.getRowCount(); i++) {
