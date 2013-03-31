@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.sun.org.apache.regexp.internal.recompile;
 
@@ -25,17 +28,42 @@ public class FilmsDAO {
 		this.myConnection = myConn;
 	}
 	
-	public ArrayList<Film> getFilmsByDominantColor(String hexColor){
+	public ArrayList<String> getFilmsByDominantColor(String hexColor){
 		
-		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));
+		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));		
 		
-		ArrayList connecRes = myConnection.getConnect().getResult().getArrayList();
-		for(int i=0 ; i<connecRes.size();i++){
-			System.out.println("FilmsDAO Results :"+connecRes.get(i));
+		System.out.println("Output : "+myConnection.getConnect().getOutput());
+		String out = myConnection.getConnect().getOutput() ;
+		out= out.trim();
+		String[] outA = out.split(",");	
+		ArrayList<String> myRes = new ArrayList<String>();
+		ArrayList<String> myResPre = new ArrayList<String>();
+	
+		for(int i=0 ; i<outA.length;i++){
+			if(!outA[i].isEmpty()) {
+				myRes.add(outA[i]);
+			}
+			
 		}
 		
+	
 		
-		return null;
+		for(int i=0 ; i<myRes.size();i++){
+			if(i%6 == 1 ||i%6 == 2||i%6 == 3){
+				myResPre.add(myRes.get(i));
+			}		
+			
+			
+		}
+		
+		for(int i=0 ; i<myResPre.size();i++){
+			System.out.println("Print a l'index "+i+" de myResPropre : "+myResPre.get(i));
+			
+		}
+		
+	
+		
+		return myResPre;
 		
 		
 	}

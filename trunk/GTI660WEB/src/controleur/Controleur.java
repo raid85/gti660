@@ -54,46 +54,47 @@ public class Controleur {
 			}
 			else if(request.getParameter("action").equals("showResults")){
 				FilmsDAO fdao = new FilmsDAO ((String)request.getSession().getAttribute("xmlPath"),(DBConnection)request.getSession().getAttribute("myConnection"));			
-				ArrayList<String> resultNameArray = new ArrayList<String> () ;
-				//On saisie la valeur du colorPicker
+				ArrayList<String> myRes = new ArrayList<String> () ;
+
+				//On saisi la valeur du colorPicker
 				String colorHex = request.getParameter("colorValue") ;
-				
+
 				//Conditions pour recherche pas image ou recherche par vidéo
 				if(request.getParameter("trg")!=null && request.getParameter("trg").equals("vidS")){
+				
+				//On fait la requête vidéo
+					myRes = fdao.getFilmsByDominantColor(colorHex);
 					
-					//On fait la requête vidéo
-					fdao.getFilmsByDominantColor(colorHex);
+				
 					
+					
+				
+
 				}
 				else if(request.getParameter("trg")!=null && request.getParameter("trg").equals("imgS")){					
 					// Ici faire la requête images
-					
-				}			
-				
-				
-				
-				//Il faut remplir le tableau des noms avec les résultats obtenus ;
-				
-				for(int i=0; i<15;i++){
-					resultNameArray.add("Film caca "+i);
-				
-				}
-							
-				request.getSession().setAttribute("searchResult", resultNameArray);
 
-				request.getSession().setAttribute("moviePath", "BandesA/317219.mov");
+				}			
+
+
+
+				
+
+				request.getSession().setAttribute("myRes", myRes);
+
+				request.getSession().setAttribute("moviePath", "bandeannonces/317219.mov");
 				System.err.println();
 				return "search.jsp";
 			}
-			
+
 			else if (request.getParameter("action").equals("jouerVideo")){
-				
+
 				//Trouver le movie path avec le parametre video (envoyé dans la requête)
 				//request.getParameter("video");
-				request.getSession().setAttribute("moviePath", "BandesA/317219.mov");
-			
+				request.getSession().setAttribute("moviePath", request.getAttribute("video"));
+
 				return "search.jsp";
-				
+
 			}
 
 		}
