@@ -39,7 +39,7 @@ Released   : 20120325
 
 		<PARAM ID="pSrc" NAME="src" VALUE="<%=request.getSession().getAttribute("moviePath")%>">
             
-                <EMBED NAME="fSrc" SRC="<%=request.getSession().getAttribute("moviePath")%>" WIDTH="90%" TYPE="video/quicktime"  controller="false" PLUGINSPAGE="http://www.apple.com/quicktime/download/"/> 
+                <EMBED NAME="fSrc" SRC="<%=request.getSession().getAttribute("moviePath")%>" TYPE="video/quicktime"  controller="false" PLUGINSPAGE="http://www.apple.com/quicktime/download/"/> 
 
 		</OBJECT>
             

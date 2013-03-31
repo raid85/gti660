@@ -40,14 +40,14 @@ Released   : 20120325
 		<br>
 		<br>
 		<p>
-      <input type="radio" id="imgS" name="trg" />
-      <label for="test_radio_1">
+      <input type="radio" id="imgS" name="trg" value="imgS" />
+      <label for="imgS">
        Search in images
       </label>
       &nbsp;
       &nbsp;
-      <input type="radio" id="vidS" name="trg" checked />
-      <label for="test_radio_2">
+      <input type="radio" id="vidS" name="trg" value="vidS" checked />
+      <label for="vidS">
         Search in videos
       </label>
     

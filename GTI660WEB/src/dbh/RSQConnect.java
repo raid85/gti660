@@ -132,7 +132,7 @@ public class RSQConnect
 				rs = (ResultSet)pstmt.executeQuery();
 			
 					
-					System.out.println("HAHAHAHAH        "+rs.next());
+					
 				
 				
 				rsmd = (ResultSetMetaData)rs.getMetaData();
@@ -145,16 +145,16 @@ public class RSQConnect
 						output = output + "\t" + result.getTitleAt(i);
 					}
 
-										System.err.println(output);
-									System.err.println("=================================================================================");
+//										System.err.println(output);
+//									System.err.println("=================================================================================");
 					output = "";
 
 					for(int i =0; i < result.getRowCount(); i++) {
 						for(int j =0; j < result.getColCount(); j++) {
 							//System.err.println("Trace " + i + " " + j);
-							output = output + "\t" + result.getObjectAt(i, j);
+							output = output + "," + result.getObjectAt(i, j);
 						}
-						//						System.err.println(output);
+											
 
 
 					}pstmt.close();

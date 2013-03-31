@@ -32,22 +32,27 @@ Released   : 20120325
 </style>
 </head>
 <body style = "overflow: auto;" >
-<%	if(request.getSession().getAttribute("searchResult")!= null ){%>
+<%	if(request.getSession().getAttribute("myRes")!= null ){%>
 	<div id="page" >
 	<div id="two-columns2">
 	<div id="column1">	
 	<jsp:include page="player.jsp"/> 				
 				</div>	
 	<div id="column2">	
-	<%ArrayList<String> Results = ((ArrayList<String>)request.getSession().getAttribute("searchResult")); %>					
+	<%ArrayList<String> Results = ((ArrayList<String>)request.getSession().getAttribute("myRes")); %>					
 						<h2>Search Results :</h2>
 							<ul>
-								 <% for (int i=0; i<Results.size();i++){%>               
+								 <% for (int i=0; i<Results.size();i++){%>  
+								<% if(i%3 == 0){%>
+								<li>
+						        <a href="./?action=jouerVideo&video=<%=Results.get(i+2).toString()%>"><%=Results.get(i).toString()%></a>
+								</li>
+								 <%}%>
+					             
 										
-						<li>
-						<a href="./?action=jouerVideo&video=<%=Results.get(i).toString()%>"><%=Results.get(i).toString()%></a>
+						
 							
-						</li>
+						
 						 <%}%>
 							</ul>	
 					
