@@ -72,7 +72,7 @@ public class Controleur {
 
 				}
 				else if(request.getParameter("trg")!=null && request.getParameter("trg").equals("imgS")){					
-					// Ici faire la requête images
+				myRes = fdao.getImagesByDominantColor(colorHex);
 
 				}			
 
@@ -81,9 +81,8 @@ public class Controleur {
 				
 
 				request.getSession().setAttribute("myRes", myRes);
-
 				request.getSession().setAttribute("moviePath", "bandeannonces/317219.mov");
-				System.err.println();
+				
 				return "search.jsp";
 			}
 

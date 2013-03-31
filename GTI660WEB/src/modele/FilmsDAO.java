@@ -27,45 +27,69 @@ public class FilmsDAO {
 		qp= new QueriesParser(xml);
 		this.myConnection = myConn;
 	}
-	
+
 	public ArrayList<String> getFilmsByDominantColor(String hexColor){
-		
+
 		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));		
-		
+
 		System.out.println("Output : "+myConnection.getConnect().getOutput());
 		String out = myConnection.getConnect().getOutput() ;
 		out= out.trim();
 		String[] outA = out.split(",");	
 		ArrayList<String> myRes = new ArrayList<String>();
 		ArrayList<String> myResPre = new ArrayList<String>();
-	
+
 		for(int i=0 ; i<outA.length;i++){
 			if(!outA[i].isEmpty()) {
 				myRes.add(outA[i]);
 			}
-			
-		}
-		
-	
-		
+
+		}	
+
 		for(int i=0 ; i<myRes.size();i++){
 			if(i%6 == 1 ||i%6 == 2||i%6 == 3){
 				myResPre.add(myRes.get(i));
 			}		
-			
-			
+
+
 		}
-		
-		for(int i=0 ; i<myResPre.size();i++){
-			System.out.println("Print a l'index "+i+" de myResPropre : "+myResPre.get(i));
-			
-		}
-		
+
 	
-		
 		return myResPre;
+
+
+	}
+	
+	public ArrayList<String> getImagesByDominantColor(String hexColor){
+
+		myConnection.getConnect().send(qp.GetImagesByDominantColor(hexColor));		
+
 		
-		
+		String out = myConnection.getConnect().getOutput() ;
+		out= out.trim();
+		String[] outA = out.split(",");	
+		ArrayList<String> myRes = new ArrayList<String>();
+		ArrayList<String> myResPre = new ArrayList<String>();
+
+		for(int i=0 ; i<outA.length;i++){
+			if(!outA[i].isEmpty()) {
+				myRes.add(outA[i]);
+			}
+
+		}	
+
+		for(int i=0 ; i<myRes.size();i++){
+			if(i%6 == 1 ||i%6 == 2||i%6 == 3){
+				myResPre.add(myRes.get(i));
+			}		
+
+
+		}
+
+	
+		return myResPre;
+
+
 	}
 
 }
