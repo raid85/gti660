@@ -35,26 +35,24 @@ Released   : 20120325
 <%	if(request.getSession().getAttribute("myRes")!= null ){%>
 	<div id="page" >
 	<div id="two-columns2">
-	<div id="column1">	
-	<jsp:include page="player.jsp"/> 				
-				</div>	
 	<div id="column2">	
 	<%ArrayList<String> Results = ((ArrayList<String>)request.getSession().getAttribute("myRes")); %>					
 						<h2>Search Results :</h2>
+							
 							<ul>
 								 <% for (int i=0; i<Results.size();i++){%>  
 								<% if(i%3 == 0){%>
 								<li>
-						        <a href="./?action=jouerVideo&video=<%=Results.get(i+2).toString()%>"><%=Results.get(i).toString()%></a>
+						        <a href="./?action=showMedia&path=<%=Results.get(i+2).toString()%>"><%=Results.get(i).toString()%></a>
 								</li>
-								 <%}%>
-					             
-										
-						
-							
-						
+								 <%}%>           
 						 <%}%>
 							</ul>	
+				
+				</div>	
+	<div id="column1">	
+	<jsp:include page="player.jsp"/> 	
+	
 					
 					
 			
