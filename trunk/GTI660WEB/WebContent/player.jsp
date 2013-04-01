@@ -28,12 +28,15 @@ Released   : 20120325
 </style>
 </head>
 <body>
-	
-<%if(request.getSession().getAttribute("video")==null ){%>
+
+
 	
 	<div id="page2">
+	
+	  <h2>Your selection :</h2>
+	<%if(request.getSession().getAttribute("moviePath")!=null ){%>
 
-    <h2>Play your selection :</h2>
+  
         <div>
             <OBJECT ID="myObj" CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab" controller="false"> 
 
@@ -44,13 +47,13 @@ Released   : 20120325
 		</OBJECT>
             
         </div>
-
-    
-	
-		
+		<%}%>
+    	<%if(request.getSession().getAttribute("imagePath")!=null ){%>
+		<img src="<%=request.getSession().getAttribute("imagePath")%>" width="90%" alt="" /></div>
+		<%}%>
 	 </div>
 	 
-	<%}%>
+	
 
 </body>
 </html>
