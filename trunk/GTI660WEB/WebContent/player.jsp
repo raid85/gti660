@@ -35,21 +35,24 @@ Released   : 20120325
 	
 	  <h2>Your selection :</h2>
 	<%if(request.getSession().getAttribute("moviePath")!=null ){%>
+	<div>
+									<OBJECT WMODE="transparent" ID="myObj"
+										CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+										CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"
+										>
+										<PARAM ID="pSrc" NAME="src" VALUE="<%=request.getSession().getAttribute("moviePath")%>">
+											<EMBED ID="eSrc" scale="1" NAME="fSrc"
+												SRC="<%=request.getSession().getAttribute("moviePath")%>" HEIGHT="500" WIDTH="700"
+												TYPE="video/quicktime"
+												PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+									</OBJECT>
+								</div>
 
   
-        <div>
-            <OBJECT ID="myObj" CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab" controller="false"> 
-
-		<PARAM ID="pSrc" NAME="src" VALUE="<%=request.getSession().getAttribute("moviePath")%>">
-            
-                <EMBED NAME="fSrc" SRC="<%=request.getSession().getAttribute("moviePath")%>" TYPE="video/quicktime"  controller="false" PLUGINSPAGE="http://www.apple.com/quicktime/download/"/> 
-
-		</OBJECT>
-            
-        </div>
+       
 		<%}%>
     	<%if(request.getSession().getAttribute("imagePath")!=null ){%>
-		<img src="<%=request.getSession().getAttribute("imagePath")%>" width="90%" alt="" /></div>
+		<img src="<%=request.getSession().getAttribute("imagePath")%>"  alt="" /></div>
 		<%}%>
 	 </div>
 	 

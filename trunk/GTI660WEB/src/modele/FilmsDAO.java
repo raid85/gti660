@@ -32,7 +32,7 @@ public class FilmsDAO {
 
 		myConnection.getConnect().send(qp.GetVideoByDominantColor(hexColor));		
 
-		System.out.println("Output : "+myConnection.getConnect().getOutput());
+		//System.out.println("Output : "+myConnection.getConnect().getOutput());
 		String out = myConnection.getConnect().getOutput() ;
 		out= out.trim();
 		String[] outA = out.split(",");	
@@ -47,7 +47,7 @@ public class FilmsDAO {
 		}	
 
 		for(int i=0 ; i<myRes.size();i++){
-			if(i%6 == 1 ||i%6 == 2||i%6 == 3){
+			if(i%6 == 1 ||i%6 == 2||i%6 == 3||i%6 == 5){
 				myResPre.add(myRes.get(i));
 			}		
 
@@ -66,6 +66,7 @@ public class FilmsDAO {
 
 		
 		String out = myConnection.getConnect().getOutput() ;
+		//System.out.println("outputgetImages : "+out);
 		out= out.trim();
 		String[] outA = out.split(",");	
 		ArrayList<String> myRes = new ArrayList<String>();
@@ -79,7 +80,7 @@ public class FilmsDAO {
 		}	
 
 		for(int i=0 ; i<myRes.size();i++){
-			if(i%6 == 1 ||i%6 == 2||i%6 == 3){
+			if(i%6 == 1 ||i%6 == 2||i%6 == 3||i%6 == 5){
 				myResPre.add(myRes.get(i));
 			}		
 
