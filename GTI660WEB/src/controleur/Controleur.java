@@ -75,24 +75,13 @@ public class Controleur {
 					
 					myRes = fdao.getImagesByDominantColor(colorHex);					
 					request.getSession().setAttribute("mediaType", "img");
+					for(int i = 0 ; i<myRes.size();i++){
+						System.out.println(" i "+myRes.get(i));
+					}
 
 				}			
 
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
-				myRes.add("CACOUS");
+			
 				
 				request.getSession().setAttribute("myRes", myRes);
 				//				request.getSession().setAttribute("moviePath", "bandeannonces/317219.mov");
@@ -104,13 +93,16 @@ public class Controleur {
 
 				//Trouver le movie path avec le parametre video (envoyé dans la requête)
 				//request.getParameter("video");
+				
 				if(request.getSession().getAttribute("mediaType").equals("vid")){
-					request.getSession().setAttribute("moviePath", request.getAttribute("path"));
-					request.getSession().setAttribute("moviePath", "bandeannonces/317219.mov");
+					request.getSession().setAttribute("moviePath", request.getParameter("path"));
+					System.out.println("moviePath : "+request.getParameter("path"));
+//					request.getSession().setAttribute("moviePath", "bandeannonces/317219.mov");
 				}
 				else if (request.getSession().getAttribute("mediaType").equals("img")){
-					request.getSession().setAttribute("imagePath", request.getAttribute("path"));
-					request.getSession().setAttribute("imagePath", "images/pics01.jpg");
+					request.getSession().setAttribute("imagePath", request.getParameter("path"));
+					System.out.println("imagePath : "+request.getParameter("path"));
+//					request.getSession().setAttribute("imagePath", "images/pics01.jpg");
 				}
 
 
