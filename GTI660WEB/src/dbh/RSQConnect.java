@@ -152,7 +152,7 @@ public class RSQConnect
 					for(int i =0; i < result.getRowCount(); i++) {
 						for(int j =0; j < result.getColCount(); j++) {
 							//System.err.println("Trace " + i + " " + j);
-							output = output + "," + result.getObjectAt(i, j);
+							output = output + ";" + result.getObjectAt(i, j);
 						}
 											
 
