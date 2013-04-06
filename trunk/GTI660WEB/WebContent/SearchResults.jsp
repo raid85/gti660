@@ -44,9 +44,14 @@ Released   : 20120325
 							
 							<ul>
 								<% for (int i=0; i<Results.size();i++){%>  
-								<% if(i%4 == 0){%>
+								<% if(i%5 == 0){%>
 								<li>
-						        <a href="./?action=showMedia&path=<%=Results.get(i+2).toString()%>"><%=Results.get(i).toString()%> @ (<%=Results.get(i+3).toString()%> %)</a>
+						        <a href="./?action=showMedia&path=<%=Results.get(i+2).toString()%>"><%=Results.get(i).toString()%></a>	
+						        <strong> Matching @</strong> (<%=Results.get(i+3).toString()%> %)					         
+						        <%if(!Results.get(i+4).toString().equals("null")){%>
+						        <p><strong>Tags : <%=Results.get(i+4).toString()%></strong>
+						        
+						         <%}%>  
 								</li>
 								 <%}%>           
 						 <%}%>
@@ -58,9 +63,14 @@ Released   : 20120325
 							
 							<ul>
 								<% for (int i=0; i<Results.size();i++){%>  
-								<% if(i%4 == 0){%>
+								<% if(i%5 == 0){%>
 								<li>
-						        <a href="./?action=showMedia&path=<%=Results.get(i+1).toString()%>"><%=Results.get(i).toString()%> @ (<%=Results.get(i+3).toString()%> %)</a>
+						        <a href="./?action=showMedia&path=<%=Results.get(i+1).toString()%>"><%=Results.get(i).toString()%></a>
+						        <strong> Matching @<%=Results.get(i+3).toString()%>%</strong>
+						        <%if(!Results.get(i+4).toString().equals("null")){%>
+						        <p><strong>Tags : <%=Results.get(i+4).toString()%></strong>
+						        
+						         <%}%>  
 								</li>
 								 <%}%>           
 						 <%}%>

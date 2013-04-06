@@ -40,9 +40,12 @@ Released   : 20120325
 										CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
 										CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab"
 										>
+										
 										<PARAM ID="pSrc" NAME="src" VALUE="<%=request.getSession().getAttribute("moviePath")%>">
-											<EMBED ID="eSrc" scale="1" NAME="fSrc"
-												SRC="<%=request.getSession().getAttribute("moviePath")%>" HEIGHT="500" WIDTH="700"
+											<EMBED ID="eSrc" scale="ToFit" NAME="fSrc" 		
+											   
+												CONTROLLER="true"
+												SRC="<%=request.getSession().getAttribute("moviePath")%>" HEIGHT="100%" 
 												TYPE="video/quicktime"
 												PLUGINSPAGE="http://www.apple.com/quicktime/download/">
 									</OBJECT>
